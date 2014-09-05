@@ -1,22 +1,18 @@
 Terminal Config
 ====================
+my simple terminal configurations for Mac / Linux environment including:
 
-my simple terminal configurations for Mac / Linux environment
-including:
 vim configuration
 --------------------
-save .vimrc into home directory: /home/user/.vimrc
-
-vim colorscheme
---------------------
-save colorscheme (vim theme) file into home directory: /home/user/.vim/colors/colorscheme
+* vim configuration (.vimrc)
+* vim colorschemes
 
 terminal colors
 --------------------
-- **Mac**
+* **Mac**
 save .bash_profile into home directory: /home/user/.bash_profile
 
-- **Linux**
+* **Linux**
 save .bashrc into home directory: /home/user/.bashrc
 
 **Terminal colors can be picked from:**

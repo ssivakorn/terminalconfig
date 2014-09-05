@@ -37,14 +37,17 @@ set hidden
 if $COLORTERM == 'gnome-terminal'
       set t_Co=256
 endif
+
+
 "turn on syntax highlighting
 syntax on
 
 "background light/dark
-set background=dark
+"set background=dark
 
 
 "color theme
+autocmd FileType c colorscheme 256-jungle
 colorscheme harlequin
 
 "highlight line number
@@ -55,6 +58,7 @@ hi Visual ctermbg=White ctermfg=Black
 
 "highlight column color
 highlight ColorColumn ctermbg=DarkRed
+
 
 " ================ Search Settings  =================
 
@@ -183,3 +187,4 @@ hi User1 ctermfg=White  ctermbg=DarkRed
 hi User2 ctermfg=Black  ctermbg=Yellow
 hi User3 ctermfg=White  ctermbg=Black
 hi User4 ctermfg=Black  ctermbg=Yellow
+
