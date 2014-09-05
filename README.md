@@ -39,4 +39,6 @@ Below terminal colors stolen from:
 ```
 ![alt text](http://misc.flogisoft.com/_media/bash/colors_format/256_colors_bg.png "Background Text")
 
-
+terminal preset color theme
+--------------------
+http://iterm2colorschemes.com/
