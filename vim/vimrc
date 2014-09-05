@@ -48,6 +48,7 @@ syntax on
 
 "color theme
 autocmd FileType c colorscheme 256-jungle
+autocmd FileType cpp colorscheme 256-jungle
 colorscheme harlequin
 
 "highlight line number
