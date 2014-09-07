@@ -47,8 +47,10 @@ syntax on
 
 
 "color theme
+highlight Comment cterm=bold
 autocmd FileType c colorscheme 256-jungle
-colorscheme harlequin
+autocmd FileType cpp colorscheme 256-jungle
+colorscheme molokai
 
 "highlight line number
 highlight LineNr ctermfg=DarkGray
