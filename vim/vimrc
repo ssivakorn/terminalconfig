@@ -50,11 +50,9 @@ syntax on
 highlight Comment cterm=bold
 autocmd FileType c colorscheme 256-jungle
 autocmd FileType cpp colorscheme 256-jungle
-<<<<<<< HEAD
-colorscheme molokai
-=======
+autocmd FileType python colorscheme molokai
 colorscheme harlequin
->>>>>>> 13610cf7bfe641ae21b118409818ff8a502c3b7f
+"colorscheme 256-jungle
 
 "highlight line number
 highlight LineNr ctermfg=DarkGray
