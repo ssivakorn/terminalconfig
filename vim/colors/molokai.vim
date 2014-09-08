@@ -216,13 +216,13 @@ if &t_Co > 255
    " Not sure if this color with underlined was defined already
    " but I added it for the definition of a class that is a 
    " subclass.
-   hi InheritUnderlined      ctermfg=118               cterm=underline
+   "hi InheritUnderlined      ctermfg=118               cterm=underline
 
-   hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
-   hi VisualNOS                   ctermbg=238
-   hi Visual                      ctermbg=235
-   hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
-   hi WildMenu        ctermfg=81  ctermbg=16
+   "hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
+   "hi VisualNOS                   ctermbg=238
+   "hi Visual                      ctermbg=235
+   "hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
+   "hi WildMenu        ctermfg=81  ctermbg=16
 
    "hi Normal          ctermfg=252 ctermbg=233
    hi Comment         ctermfg=59
