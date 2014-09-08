@@ -14,11 +14,12 @@ set background=dark
 let g:colors_name="molokai"
 
 " Basic Layout {{{
-hi Normal          guifg=#F8F8F2 guibg=#1B1E1F
+"hi Normal          guifg=#F8F8F2 guibg=#1B1E1F
+hi Normal          guifg=#F8F8F2 guibg=#000000
 hi Folded          guifg=#666666 guibg=bg
-hi CursorLine                    guibg=#232728
-hi CursorColumn                  guibg=#232728
-hi ColorColumn                   guibg=#232728
+hi CursorLine                    guibg=#000000
+hi CursorColumn                  guibg=#000000
+hi ColorColumn                   guibg=#000000
 hi LineNr          guifg=#AAAAAA guibg=bg
 hi FoldColumn      guifg=#AAAAAA guibg=bg
 hi VertSplit       guifg=#AAAAAA guibg=bg gui=none
@@ -223,14 +224,13 @@ if &t_Co > 255
    hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
    hi WildMenu        ctermfg=81  ctermbg=16
 
-   hi Normal          ctermfg=252 ctermbg=233
+   "hi Normal          ctermfg=252 ctermbg=233
    hi Comment         ctermfg=59
-   hi CursorLine                  ctermbg=234   cterm=none
-   hi CursorColumn                ctermbg=234
-   hi ColorColumn                 ctermbg=234
-   hi LineNr          ctermfg=250 ctermbg=233
-   hi NonText         ctermfg=240 ctermbg=233
+   "hi CursorLine                  ctermbg=234   cterm=none
+   "hi CursorColumn                ctermbg=234
+   "hi ColorColumn                 ctermbg=234
+   hi LineNr          ctermfg=244 ctermbg=0
+   hi NonText         ctermfg=240 ctermbg=0
 end " }}}
 
 highlight Comment cterm=bold
-
