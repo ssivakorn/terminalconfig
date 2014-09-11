@@ -13,3 +13,11 @@ save colorscheme (vim theme) file into home directory: /home/user/.vim/colors/
 colorschemes including:
 * harlequin
 * 256-jungle
+
+
+Easy Install
+--------------------
+```shell
+$ chmod +x vcf_installer.sh
+$ ./vcf_installer.sh
+```
