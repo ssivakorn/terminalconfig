@@ -5,6 +5,9 @@
 # set fancy color
 export TERM="xterm-256color"
 
+# set man page color
+export PAGER="most"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
