@@ -45,6 +45,8 @@ syntax on
 "background light/dark
 "set background=dark
 
+"hilight systax from start of file
+autocmd BufEnter * :syntax sync fromstart
 
 "color theme
 highlight Comment cterm=bold
