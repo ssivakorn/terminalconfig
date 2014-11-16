@@ -16,7 +16,15 @@ cp -rf "$_colors_dir"  ~/"$_vim_dir"/.
 cp -rf "$_syntax_dir"  ~/"$_vim_dir"/.
 
 echo "[>] Installing plugins and bundles ..."
-cp -rf "$_plugin_dir" ~/"$_vim_dir"/.
-cp -rf "$_autoload_dir" ~/"$_vim_dir"/.
-cp -rf "$_bundle_dir" ~/"$_vim_dir"/.
+#cp -rf "$_plugin_dir" ~/"$_vim_dir"/.
+#cp -rf "$_autoload_dir" ~/"$_vim_dir"/.
+#cp -rf "$_bundle_dir" ~/"$_vim_dir"/.
+
+echo "\t[+] vim-pathogen"
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+echo "\t[+] vim-airline"
+rm -rf ~/.vim/bundle/vim-airline
+git clone https://github.com/bling/vim-airline ~/.vim/bundle/vim-airline
 

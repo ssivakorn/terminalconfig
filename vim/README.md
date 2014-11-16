@@ -2,8 +2,11 @@ vim configuration
 ====================
 my simple .vimrc configuration for linux and mac includes:
 * **vim-pathogen** plugin managing plugin
+    https://github.com/tpope/vim-pathogen
 * **vim-airline** nice and light status line with pure vim script
+    https://github.com/bling/vim-airline
 * **vim-taglist** listing all functions in the code
+    http://vim-taglist.sourceforge.net/
 
 vim configuration
 --------------------
@@ -21,7 +24,7 @@ Easy Install
 --------------------
 ```shell
 $ chmod +x vcf_installer.sh
-$ ./vcf_installer.sh
+$ sh vcf_installer.sh
 ```
 
 Ctag must be installed to enable taglist:
