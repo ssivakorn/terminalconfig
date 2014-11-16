@@ -12,9 +12,10 @@ endif
 " This loads all the plugins in ~/.vim/plugins
 " Use tpope's pathogen plugin to manage all other plugins
 
-"  runtime plugins/tpope-vim-pathogen/autoload/pathogen.vim
-" call pathogen#infect()
-" call pathogen#helptags()
+"runtime plugins/tpope-vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+call pathogen#helptags()
+" call pathogen#runtime_append_all_bundles()
 
 " ================ General Config ====================
 
@@ -186,15 +187,15 @@ autocmd BufReadPost *
 "set mouse=a
 
 "set status line
-set noruler
+"set noruler
 set laststatus=2
-set statusline+=%1*\ %t\                        "File name
-set statusline+=%2*\ %m\                        "Modify?
-set statusline+=%3*\ %=\ line:%l/%L\ (%03p%%)\  "Rownumber/total (%)
-set statusline+=%4*\ col:%03c\                  "Colnr
-hi StatusLine ctermfg=Black ctermbg=Gray
-hi User1 ctermfg=White  ctermbg=DarkRed
-hi User2 ctermfg=Black  ctermbg=Yellow
-hi User3 ctermfg=White  ctermbg=Black
-hi User4 ctermfg=Black  ctermbg=Yellow
+"set statusline+=%1*\ %t\                        "File name
+"set statusline+=%2*\ %m\                        "Modify?
+"set statusline+=%3*\ %=\ line:%l/%L\ (%03p%%)\  "Rownumber/total (%)
+"set statusline+=%4*\ col:%03c\                  "Colnr
+"hi StatusLine ctermfg=Black ctermbg=Gray
+"hi User1 ctermfg=White  ctermbg=DarkRed
+"hi User2 ctermfg=Black  ctermbg=Yellow
+"hi User3 ctermfg=White  ctermbg=Black
+"hi User4 ctermfg=Black  ctermbg=Yellow
 

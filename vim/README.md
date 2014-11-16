@@ -1,6 +1,9 @@
 vim configuration
 ====================
-my simple .vimrc configuration for linux and mac.
+my simple .vimrc configuration for linux and mac includes:
+* **vim-pathogen** plugin managing plugin
+* **vim-airline** nice and light status line with pure vim script
+* **vim-taglist** listing all functions in the code
 
 vim configuration
 --------------------
@@ -13,10 +16,6 @@ save colorscheme (vim theme) file into home directory: /home/user/.vim/colors/
 colorschemes including:
 * harlequin
 * 256-jungle
-
-vim taglist
---------------------
-vim taglist plugin for listing all functions in the code.
 
 Easy Install
 --------------------
