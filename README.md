@@ -1,6 +1,6 @@
 Terminal Config
 ====================
-my simple terminal configurations for Mac / Linux environment including:
+my simple terminal configurations for Mac / Linux environment includes:
 
 terminal colors
 --------------------
@@ -32,9 +32,9 @@ Below terminal colors stolen from:
 
 terminal preset color theme
 --------------------
-http://iterm2colorschemes.com/
+themes of iterm2 terminal color for mac os: http://iterm2colorschemes.com/
 
-man page fancy color
+fancy your man page 
 --------------------
 ```shell
 $ sudo apt-get install most
@@ -48,7 +48,7 @@ $ export PAGER="/usr/bin/most -s"
 
 vim configuration
 --------------------
+see https://github.com/ssivakorn/terminalconfig/tree/master/vim for simple and light vim configuration.
 * vim configuration (.vimrc)
 * vim colorschemes
-
-
+* vim plugins e.g. vim-pathogen, vim-airline, ctag, and vim-tlist
