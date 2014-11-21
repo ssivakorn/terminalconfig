@@ -199,3 +199,10 @@ set laststatus=2
 "hi User3 ctermfg=White  ctermbg=Black
 "hi User4 ctermfg=Black  ctermbg=Yellow
 
+" ================ vim airline  =====================
+"vim airline enable
+"let g:airline#extensions#tabline#enabled = 1
+
+" ================ LaTex ============================
+" faster scrolling in tex file
+autocmd FileType tex :NoMatchParen
