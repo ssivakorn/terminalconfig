@@ -129,8 +129,6 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
-"
-
 " ================ Scrolling ========================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -154,9 +152,10 @@ set clipboard^=unnamed
 "autocmd BufWritePost *.c :TlistUpdate
 
 " ================ Cursor ===========================
+
 " highlight current line
 set cursorline
-hi CursorLine   cterm=NONE ctermbg=236
+hi CursorLine   cterm=NONE ctermbg=233
 
 " Restore cursor position to where it was before
 autocmd BufReadPost *
@@ -167,6 +166,7 @@ autocmd BufReadPost *
 "set mouse=a
 
 " ================ Status Line  =====================
+
 "set status line
 "set noruler
 set laststatus=2
@@ -181,9 +181,11 @@ set laststatus=2
 "hi User4 ctermfg=Black  ctermbg=Yellow
 
 " ================ vim airline  =====================
+
 "vim airline enable
 "let g:airline#extensions#tabline#enabled = 1
 
 " ================ LaTex ============================
+
 " faster scrolling in tex file
 autocmd FileType tex :NoMatchParen
