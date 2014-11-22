@@ -153,39 +153,20 @@ set clipboard^=unnamed
 "autocmd BufWritePost *.cpp :TlistUpdate
 "autocmd BufWritePost *.c :TlistUpdate
 
+" ================ Cursor ===========================
+" highlight current line
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=236
+
 " Restore cursor position to where it was before
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
-"augroup JumpCursorOnEdit
-"	au!
-"	autocmd BufReadPost *
-"		\ if expand("<afile>:p:h") !=? $TEMP |
-"		\   if line("'\"") > 1 && line("'\"") <= line("$") |
-"		\     let JumpCursorOnEdit_foo = line("'\"") |
-"		\     let b:doopenfold = 1 |
-"		\     if (foldlevel(JumpCursorOnEdit_foo) > foldlevel(JumpCursorOnEdit_foo - 1)) |
-"		\        let JumpCursorOnEdit_foo = JumpCursorOnEdit_foo - 1 |
-"		\        let b:doopenfold = 2 |
-"		\     endif |
-"		\     exe JumpCursorOnEdit_foo |
-"		\   endif |
-"		\ endif
-"	" Need to postpone using "zv" until after reading the modelines.
-"	autocmd BufWinEnter *
-"		\ if exists("b:doopenfold") |
-"		\   exe "normal zv" |
-"		\   if(b:doopenfold > 1) |
-"		\       exe  "+".1 |
-"		\   endif |
-"		\   unlet b:doopenfold |
-"		\ endif
-"augroup END
-
 "enable mouse control
 "set mouse=a
 
+" ================ Status Line  =====================
 "set status line
 "set noruler
 set laststatus=2
