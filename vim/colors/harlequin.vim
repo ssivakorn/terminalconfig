@@ -19,7 +19,7 @@ let colors_name = "harlequin"
 
 let s:text = ['#F8F8F2', 15]
 "let s:text_bg = ['#1C1B1A', 234]
-let s:text_bg = ['#000000', 0]
+let s:text_bg = ['#000000', 232]
 
 let s:white = ['#FFFFFF', 15]
 let s:black = ['#000000', 0]
@@ -165,8 +165,8 @@ call s:Highlight('MatchParen',      s:black, s:gold, 'bold', '')
 
 call s:Highlight('LineNr',          s:greys[2], '', '', '')
 call s:Highlight('NonText',         s:greys[2], '', '', '')
-call s:HighlightX('CursorColumn',   '', s:greys[5], '', '')
-call s:HighlightX('CursorLine',     '', s:greys[5], '', '')
+"call s:HighlightX('CursorColumn',   '', s:greys[5], '', '')
+"call s:HighlightX('CursorLine',     '', s:greys[5], '', '')
 call s:Highlight('SignColumn',      '', s:greys[5], '', '')
 call s:HighlightX('ColorColumn',    '', s:greys[5], '', '')
 

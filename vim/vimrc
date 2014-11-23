@@ -43,19 +43,26 @@ endif
 "turn on syntax highlighting
 syntax on
 
-"background light/dark
-"set background=dark
-
 "hilight systax from start of file
 autocmd BufEnter * :syntax sync fromstart
 
-"color theme
-highlight Comment cterm=bold
+"color themes
+"colorscheme 256-jungle
+colorscheme molokai
+"colorscheme harlequin
+
 autocmd FileType c colorscheme 256-jungle
 autocmd FileType cpp colorscheme 256-jungle
-autocmd FileType python colorscheme molokai
-colorscheme harlequin
-"colorscheme 256-jungle
+"autocmd FileType python colorscheme harlequin
+
+highlight Comment cterm=bold
+highlight Normal ctermbg=None ctermfg=white
+highlight LineNr ctermbg=None
+
+"background light/dark
+"set background=dark
+"let g:molokai_original = 1
+"let g:rehash256 = 1
 
 "highlight line number
 highlight LineNr ctermfg=DarkGray
@@ -129,6 +136,8 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
+"
+
 " ================ Scrolling ========================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -152,10 +161,9 @@ set clipboard^=unnamed
 "autocmd BufWritePost *.c :TlistUpdate
 
 " ================ Cursor ===========================
-
 " highlight current line
 set cursorline
-hi CursorLine   cterm=NONE ctermbg=233
+hi CursorLine   cterm=NONE ctermbg=234
 
 " Restore cursor position to where it was before
 autocmd BufReadPost *
@@ -166,7 +174,6 @@ autocmd BufReadPost *
 "set mouse=a
 
 " ================ Status Line  =====================
-
 "set status line
 "set noruler
 set laststatus=2
@@ -181,11 +188,9 @@ set laststatus=2
 "hi User4 ctermfg=Black  ctermbg=Yellow
 
 " ================ vim airline  =====================
-
 "vim airline enable
 "let g:airline#extensions#tabline#enabled = 1
 
-" ================ LaTex ============================
-
+" ================ LaTeX ============================
 " faster scrolling in tex file
 autocmd FileType tex :NoMatchParen
