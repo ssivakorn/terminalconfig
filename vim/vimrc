@@ -95,7 +95,7 @@ set clipboard^=unnamed
 "autocmd BufWritePost *.c :TlistUpdate
 
 
-" =============== Pathogen Initialization ===============
+" =============== Pathogen Initialization ===========
 " This loads all the plugins in ~/.vim/plugins
 " Use tpope's pathogen plugin to manage all other plugins
 
@@ -104,7 +104,7 @@ call pathogen#infect()
 call pathogen#helptags()
 " call pathogen#runtime_append_all_bundles()
 
-" ================ General Config ====================
+" ================ General Config ===================
 
 set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
@@ -126,6 +126,7 @@ if $COLORTERM == 'gnome-terminal'
       set t_Co=256
 endif
 
+" ================ Fancy Colorscheme ================
 set background=dark
 
 "turn on syntax highlighting
@@ -135,26 +136,36 @@ syntax on
 autocmd BufEnter * :syntax sync fromstart
 
 "color themes
-"colorscheme 256-jungle
+function SetColor()
+    highlight Comment cterm=bold
+    highlight Normal ctermbg=None ctermfg=white
+    highlight LineNr ctermbg=None
+
+    "highlight line number
+    highlight LineNr ctermfg=DarkGray
+
+    "selected code color (visual)
+    hi Visual ctermbg=White ctermfg=Black
+
+    "highlight column color
+    highlight ColorColumn ctermbg=DarkRed
+endfunction
+
+
 colorscheme luna-term
+call SetColor()
 
-autocmd FileType c colorscheme 256-jungle
-autocmd FileType cpp colorscheme 256-jungle
-autocmd FileType tex colorscheme molokai
+autocmd FileType c
+        \ colorscheme 256-jungle |
+        \ call SetColor()
+autocmd FileType cpp
+        \ colorscheme 256-jungle |
+        \ call SetColor()
+autocmd FileType tex
+        \ colorscheme harlequin |
+        \ call SetColor()
+
 "autocmd FileType python colorscheme molokai
-
-highlight Comment cterm=bold
-highlight Normal ctermbg=None ctermfg=white
-highlight LineNr ctermbg=None
-
-"highlight line number
-highlight LineNr ctermfg=DarkGray
-
-"selected code color (visual)
-hi Visual ctermbg=White ctermfg=Black
-
-"highlight column color
-highlight ColorColumn ctermbg=DarkRed
 
 " ================ Cursor ===========================
 " highlight current line
@@ -174,9 +185,9 @@ autocmd BufReadPost *
 
 
 " ================ Status Line  =====================
+set laststatus=2
 "set status line
 "set noruler
-set laststatus=2
 "set statusline+=%1*\ %t\                        "File name
 "set statusline+=%2*\ %m\                        "Modify?
 "set statusline+=%3*\ %=\ line:%l/%L\ (%03p%%)\  "Rownumber/total (%)
@@ -190,6 +201,8 @@ set laststatus=2
 " ================ vim airline  =====================
 "vim airline enable
 "let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " ================ LaTeX ============================
 " faster scrolling in tex file

@@ -16,13 +16,12 @@ mkdir -p ~/${_vim_dir}
 cp -rf "$_syntax_dir"  ~/"$_vim_dir"/.
 
 
-echo "[>] Installing my default colorschemes ..."
+echo "[>] Download and Installing default colorschemes ..."
 mkdir -p ~/${_vim_dir}/${_colors_dir}
 curl -LSso ~/.vim/colors/luna-term.vim https://raw.githubusercontent.com/Pychimp/vim-luna/master/colors/luna-term.vim
-curl -LSso ~/.vim/colors/luna.vim https://raw.githubusercontent.com/Pychimp/vim-luna/master/colors/luna.vim
 curl -LSso ~/.vim/colors/molokai.vim https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
 curl -LSso ~/.vim/colors/256-jungle.vim https://raw.githubusercontent.com/vim-scripts/256-jungle/master/colors/256-jungle.vim
-
+curl -LSso ~/.vim/colors/harlequin.vim https://raw.githubusercontent.com/nielsmadan/harlequin/master/colors/harlequin.vim
 
 
 echo "[>] Installing plugins and bundles ..."
