@@ -17,8 +17,10 @@ vim colorscheme
 save colorscheme (vim theme) file into home directory: /home/user/.vim/colors/
 
 colorschemes including:
-* harlequin
-* 256-jungle
+* harlequin https://github.com/nielsmadan/harlequin
+* 256-jungle https://github.com/vim-scripts/256-jungle
+* molokai https://github.com/tomasr/molokai
+* luna-term (newly added) https://github.com/Pychimp/vim-luna
 
 Easy Install
 --------------------
