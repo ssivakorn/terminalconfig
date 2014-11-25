@@ -8,72 +8,6 @@ if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
 
-" =============== Pathogen Initialization ===============
-" This loads all the plugins in ~/.vim/plugins
-" Use tpope's pathogen plugin to manage all other plugins
-
-"runtime plugins/tpope-vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
-" call pathogen#runtime_append_all_bundles()
-
-" ================ General Config ====================
-
-set number                      "Line numbers are good
-set backspace=indent,eol,start  "Allow backspace in insert mode
-set history=1000                "Store lots of :cmdline history
-set showcmd                     "Show incomplete cmds down the bottom
-set showmode                    "Show current mode down the bottom
-set gcr=a:blinkon0              "Disable cursor blink
-set visualbell                  "No sounds
-set autoread                    "Reload files changed outside vim
-set colorcolumn=80
-set cinoptions=t0
-" This makes vim act like all other editors, buffers can
-" exist in the background without being in a window.
-" http://items.sjbach.com/319/configuring-vim-right
-set hidden
-
-" enable full color supported
-if $COLORTERM == 'gnome-terminal'
-      set t_Co=256
-endif
-
-
-"turn on syntax highlighting
-syntax on
-
-"hilight systax from start of file
-autocmd BufEnter * :syntax sync fromstart
-
-"color themes
-"colorscheme 256-jungle
-colorscheme molokai
-"colorscheme harlequin
-
-autocmd FileType c colorscheme 256-jungle
-autocmd FileType cpp colorscheme 256-jungle
-"autocmd FileType python colorscheme harlequin
-
-highlight Comment cterm=bold
-highlight Normal ctermbg=None ctermfg=white
-highlight LineNr ctermbg=None
-
-"background light/dark
-"set background=dark
-"let g:molokai_original = 1
-"let g:rehash256 = 1
-
-"highlight line number
-highlight LineNr ctermfg=DarkGray
-
-"selected code color (visual)
-hi Visual ctermbg=White ctermfg=Black
-
-"highlight column color
-highlight ColorColumn ctermbg=DarkRed
-
-
 " ================ Search Settings  =================
 
 set incsearch        "Find the next match as we type the search
@@ -160,10 +94,74 @@ set clipboard^=unnamed
 "autocmd BufWritePost *.cpp :TlistUpdate
 "autocmd BufWritePost *.c :TlistUpdate
 
+
+" =============== Pathogen Initialization ===============
+" This loads all the plugins in ~/.vim/plugins
+" Use tpope's pathogen plugin to manage all other plugins
+
+"runtime plugins/tpope-vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+call pathogen#helptags()
+" call pathogen#runtime_append_all_bundles()
+
+" ================ General Config ====================
+
+set number                      "Line numbers are good
+set backspace=indent,eol,start  "Allow backspace in insert mode
+set history=1000                "Store lots of :cmdline history
+set showcmd                     "Show incomplete cmds down the bottom
+set showmode                    "Show current mode down the bottom
+set gcr=a:blinkon0              "Disable cursor blink
+set visualbell                  "No sounds
+set autoread                    "Reload files changed outside vim
+set colorcolumn=80
+set cinoptions=t0
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
+
+" enable full color supported
+if $COLORTERM == 'gnome-terminal'
+      set t_Co=256
+endif
+
+set background=dark
+
+"turn on syntax highlighting
+syntax on
+
+"hilight systax from start of file
+autocmd BufEnter * :syntax sync fromstart
+
+"color themes
+"colorscheme 256-jungle
+colorscheme luna-term
+
+autocmd FileType c colorscheme 256-jungle
+autocmd FileType cpp colorscheme 256-jungle
+autocmd FileType tex colorscheme molokai
+"autocmd FileType python colorscheme molokai
+
+highlight Comment cterm=bold
+highlight Normal ctermbg=None ctermfg=white
+highlight LineNr ctermbg=None
+
+"highlight line number
+highlight LineNr ctermfg=DarkGray
+
+"selected code color (visual)
+hi Visual ctermbg=White ctermfg=Black
+
+"highlight column color
+highlight ColorColumn ctermbg=DarkRed
+
 " ================ Cursor ===========================
 " highlight current line
+hi clear CursorLine
 set cursorline
 hi CursorLine   cterm=NONE ctermbg=234
+hi CursorLineNR ctermfg=172
 
 " Restore cursor position to where it was before
 autocmd BufReadPost *
@@ -172,6 +170,8 @@ autocmd BufReadPost *
      \ endif
 "enable mouse control
 "set mouse=a
+
+
 
 " ================ Status Line  =====================
 "set status line
