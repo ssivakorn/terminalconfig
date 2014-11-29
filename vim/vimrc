@@ -151,37 +151,42 @@ function SetColor()
     highlight ColorColumn ctermbg=DarkRed
 endfunction
 
+" ================ Cursor ===========================
+" highlight current line
+function SetCursorStyle()
+    hi clear CursorLine
+    set cursorline
+    hi CursorLine   cterm=NONE ctermbg=234
+    hi CursorLineNR ctermfg=172
+
+    " Restore cursor position to where it was before
+    autocmd BufReadPost *
+         \ if line("'\"") > 0 && line("'\"") <= line("$") |
+         \   exe "normal! g`\"" |
+         \ endif
+    "enable mouse control
+    "set mouse=a
+endfunction
+
 
 colorscheme luna-term
 call SetColor()
+call SetCursorStyle()
 
 autocmd FileType c
         \ colorscheme 256-jungle |
-        \ call SetColor()
+        \ call SetColor() |
+        \ call SetCursorStyle()
 autocmd FileType cpp
         \ colorscheme 256-jungle |
-        \ call SetColor()
+        \ call SetColor() |
+        \ call SetCursorStyle()
 autocmd FileType tex
         \ colorscheme harlequin |
-        \ call SetColor()
+        \ call SetColor() |
+        \ call SetCursorStyle()
 
 "autocmd FileType python colorscheme molokai
-
-" ================ Cursor ===========================
-" highlight current line
-hi clear CursorLine
-set cursorline
-hi CursorLine   cterm=NONE ctermbg=234
-hi CursorLineNR ctermfg=172
-
-" Restore cursor position to where it was before
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
-"enable mouse control
-"set mouse=a
-
 
 
 " ================ Status Line  =====================
