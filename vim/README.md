@@ -1,18 +1,20 @@
 vim configuration
 ====================
-my simple .vimrc configuration for linux and mac includes:
+a simple .vimrc configuration for linux and mac includes:
 * **vim-pathogen** plugin managing plugin
     https://github.com/tpope/vim-pathogen
 * **vim-airline** nice and light status line with pure vim script
     https://github.com/bling/vim-airline
+* **vim-airlineish** beautiful vim-airline theme
+    https://github.com/paranoida/vim-airlineish
 * **vim-taglist** listing all functions in the code
     http://vim-taglist.sourceforge.net/
 
-vim configuration
+Configuration
 --------------------
 save .vimrc into home directory: /home/user/.vimrc
 
-vim colorscheme
+Colorschemes
 --------------------
 save colorscheme (vim theme) file into home directory: /home/user/.vim/colors/
 
@@ -22,7 +24,12 @@ colorschemes including:
 * molokai https://github.com/tomasr/molokai
 * luna-term (newly added) https://github.com/Pychimp/vim-luna
 
-Easy Install
+Fonts
+--------------------
+vim-airline is much beautiful when integrated with vim-powerline font
+see https://github.com/powerline/fonts for installation instruction.
+
+Installation
 --------------------
 ```shell
 $ chmod +x vcf_installer.sh
@@ -43,4 +50,3 @@ sudo yum install ctags
 $ brew install ctags
 $ alias ctags="`brew --prefix`/bin/ctags"
 ```
-

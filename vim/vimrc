@@ -168,6 +168,7 @@ function SetCursorStyle()
     "set mouse=a
 endfunction
 
+" ================ Colorscheme ======================
 
 colorscheme luna-term
 call SetColor()
@@ -185,30 +186,20 @@ autocmd FileType tex
         \ colorscheme harlequin |
         \ call SetColor() |
         \ call SetCursorStyle()
-
 "autocmd FileType python colorscheme molokai
-
-
-" ================ Status Line  =====================
-set laststatus=2
-"set status line
-"set noruler
-"set statusline+=%1*\ %t\                        "File name
-"set statusline+=%2*\ %m\                        "Modify?
-"set statusline+=%3*\ %=\ line:%l/%L\ (%03p%%)\  "Rownumber/total (%)
-"set statusline+=%4*\ col:%03c\                  "Colnr
-"hi StatusLine ctermfg=Black ctermbg=Gray
-"hi User1 ctermfg=White  ctermbg=DarkRed
-"hi User2 ctermfg=Black  ctermbg=Yellow
-"hi User3 ctermfg=White  ctermbg=Black
-"hi User4 ctermfg=Black  ctermbg=Yellow
-
-" ================ vim airline  =====================
-"vim airline enable
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " ================ LaTeX ============================
 " faster scrolling in tex file
 autocmd FileType tex :NoMatchParen
+
+
+" ================ Status Line  =====================
+set laststatus=2
+
+" ================ Plugins  =========================
+" ================ Airline
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_powerline_fonts=1
+let g:airline_theme = 'airlineish'

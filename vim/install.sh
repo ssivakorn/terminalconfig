@@ -1,39 +1,45 @@
 #!/bin/bash
+COLOR="colors"
+SYNTAX="syntax"
+PLUGIN="plugin"
+BUNDLE="bundle"
+AUTOLOAD="autoload"
 
-_vim_dir=".vim"
-_colors_dir="colors"
-_syntax_dir="syntax"
-_plugin_dir="plugin"
-_bundle_dir="bundle"
-_autoload_dir="autoload"
+VIM_PATH="$HOME/.vim"
+COLOR_PATH="${VIM_PATH}/${COLOR}"
+SYNTAX_PATH="${VIM_PATH}/${SYNTAX}"
+PLUGIN_PATH="${VIM_PATH}/${PLUGIN}"
+BUNDLE_PATH="${VIM_PATH}/${BUNDLE}"
+AUTOLOAD_PATH="${VIM_PATH}/${AUTOLOAD}"
 
 echo "[>] Installing vim config ..."
 cp vimrc ~/.vimrc
 
 echo "[>] Installing syntax ..."
-mkdir -p ~/${_vim_dir}
-#cp -rf "$_colors_dir"  ~/"$_vim_dir"/.
-cp -rf "$_syntax_dir"  ~/"$_vim_dir"/.
+mkdir -p "${VIM_PATH}"
+cp -rf ${SYNTAX}  "${VIM_PATH}/."
 
 
-echo "[>] Download and Installing default colorschemes ..."
-mkdir -p ~/${_vim_dir}/${_colors_dir}
-curl -LSso ~/.vim/colors/luna-term.vim https://raw.githubusercontent.com/Pychimp/vim-luna/master/colors/luna-term.vim
-curl -LSso ~/.vim/colors/molokai.vim https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
-curl -LSso ~/.vim/colors/256-jungle.vim https://raw.githubusercontent.com/vim-scripts/256-jungle/master/colors/256-jungle.vim
-curl -LSso ~/.vim/colors/harlequin.vim https://raw.githubusercontent.com/nielsmadan/harlequin/master/colors/harlequin.vim
+echo "[>] Installing colorschemes ..."
+mkdir -p "${COLOR_PATH}"
+curl -LSso "${COLOR_PATH}/luna-term.vim" https://raw.githubusercontent.com/Pychimp/vim-luna/master/colors/luna-term.vim
+curl -LSso "${COLOR_PATH}/molokai.vim" https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
+curl -LSso "${COLOR_PATH}/256-jungle.vim" https://raw.githubusercontent.com/vim-scripts/256-jungle/master/colors/256-jungle.vim
+curl -LSso "${COLOR_PATH}/harlequin.vim" https://raw.githubusercontent.com/nielsmadan/harlequin/master/colors/harlequin.vim
 
 
 echo "[>] Installing plugins and bundles ..."
-#cp -rf "$_plugin_dir" ~/"$_vim_dir"/.
-#cp -rf "$_autoload_dir" ~/"$_vim_dir"/.
-#cp -rf "$_bundle_dir" ~/"$_vim_dir"/.
-
 echo "\t[+] vim-pathogen"
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+mkdir -p ${AUTOLOAD_PATH}
+mkdir -p ${BUNDLE_PATH}
+curl -LSso "${AUTOLOAD_PATH}/pathogen.vim" https://tpo.pe/pathogen.vim
 
 echo "\t[+] vim-airline"
-rm -rf ~/.vim/bundle/vim-airline
-git clone https://github.com/bling/vim-airline ~/.vim/bundle/vim-airline
+airline="${BUNDLE_PATH}/vim-airline"
+rm -rf ${airline}
+git clone https://github.com/bling/vim-airline ${airline}
 
+echo "\t[+] vim-airlineish"
+airlineish="${BUNDLE_PATH}/vim-airlineish"
+rm -rf ${airlineish}
+git clone https://github.com/paranoida/vim-airlineish.git ${airlineish}
