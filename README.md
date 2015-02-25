@@ -1,6 +1,6 @@
-Terminal Config
+terminalconfig
 ====================
-my simple terminal configurations for Mac / Linux environment includes:
+simple terminal configurations for Mac / Linux environment includes:
 
 terminal colors
 --------------------
