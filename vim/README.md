@@ -29,6 +29,12 @@ Fonts
 vim-airline is much beautiful when integrated with vim-powerline font
 see https://github.com/powerline/fonts for installation instruction.
 
+Syntax Checker
+--------------------
+checkers support by syntastic:
+https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers
+
+
 Installation
 --------------------
 ```shell
