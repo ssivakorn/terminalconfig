@@ -49,3 +49,8 @@ syntastic="${BUNDLE_PATH}/syntastic"
 rm -rf ${syntastic}
 git clone https://github.com/scrooloose/syntastic.git ${syntastic}
 
+echo "\n[+] vim-taglist"
+mkdir -p ${PLUGIN_PATH}
+curl -LSso "${PLUGIN_PATH}/taglist.vim" https://raw.githubusercontent.com/vim-scripts/taglist.vim/master/plugin/taglist.vim
+
+

@@ -86,14 +86,6 @@ let g:tex_flavor='latex'
 
 set clipboard^=unnamed
 
-"taglist options
-"let Tlist_Display_Prototype=1
-"let Tlist_Exit_OnlyWindow=1
-"let Tlist_WinWidth=50
-"let Tlist_Auto_Open=1
-"autocmd BufWritePost *.cpp :TlistUpdate
-"autocmd BufWritePost *.c :TlistUpdate
-
 
 " =============== Pathogen Initialization ===========
 " This loads all the plugins in ~/.vim/plugins
@@ -219,3 +211,14 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_use_codec = 1
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_html_checkers = ['w3']
+
+
+" ================ Taglist
+"let Tlist_Display_Prototype=1
+let Tlist_Exit_OnlyWindow=1
+"let Tlist_WinWidth=50
+"let Tlist_Auto_Open=1
+"autocmd BufWritePost *.cpp :TlistUpdate
+"autocmd BufWritePost *.c :TlistUpdate
+
+
