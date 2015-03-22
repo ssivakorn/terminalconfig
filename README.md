@@ -31,7 +31,6 @@ Below terminal colors stolen from:
 ![alt text](http://misc.flogisoft.com/_media/bash/colors_format/256_colors_bg.png "Background Text")
 
 * Display all terminal colors
-use this script to show colors
 ```shell
 $ ./colors.sh
 ```
