@@ -30,6 +30,17 @@ Below terminal colors stolen from:
 ```
 ![alt text](http://misc.flogisoft.com/_media/bash/colors_format/256_colors_bg.png "Background Text")
 
+* Display all terminal colors
+use this script to show colors
+```shell
+$ ./colors.sh
+```
+
+use this script to show full colors
+```shell
+$ ./fullcolors.py
+```
+
 terminal preset color theme
 --------------------
 themes of iterm2 terminal color for mac os: http://iterm2colorschemes.com/
