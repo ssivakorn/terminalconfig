@@ -1,4 +1,5 @@
 #!/bin/bash
+
 COLOR="colors"
 SYNTAX="syntax"
 PLUGIN="plugin"
@@ -34,23 +35,26 @@ mkdir -p ${AUTOLOAD_PATH}
 mkdir -p ${BUNDLE_PATH}
 curl -LSso "${AUTOLOAD_PATH}/pathogen.vim" https://tpo.pe/pathogen.vim
 
-echo "\n[+] vim-airline"
+echo "[+] vim-airline"
 airline="${BUNDLE_PATH}/vim-airline"
 rm -rf ${airline}
 git clone https://github.com/bling/vim-airline ${airline}
 
-echo "\n[+] vim-airlineish"
+echo "[+] vim-airline colors"
 airlineish="${BUNDLE_PATH}/vim-airlineish"
 rm -rf ${airlineish}
 git clone https://github.com/paranoida/vim-airlineish.git ${airlineish}
 
-echo "\n[+] vim-syntastic"
+
+echo "[+] vim-syntastic"
 syntastic="${BUNDLE_PATH}/syntastic"
 rm -rf ${syntastic}
 git clone https://github.com/scrooloose/syntastic.git ${syntastic}
 
-echo "\n[+] vim-taglist"
+echo "[+] vim-taglist"
 mkdir -p ${PLUGIN_PATH}
 curl -LSso "${PLUGIN_PATH}/taglist.vim" https://raw.githubusercontent.com/vim-scripts/taglist.vim/master/plugin/taglist.vim
 
-
+#echo "[+] vim python syntax highlight"
+# credit: https://github.com/hdima/python-syntax
+#curl -LSso "${SYNTAX_PATH}/python.vim" https://raw.githubusercontent.com/hdima/python-syntax/master/syntax/python.vim

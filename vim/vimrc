@@ -123,6 +123,9 @@ set background=dark
 "turn on syntax highlighting
 syntax on
 
+"enable python syntax highlight
+let python_highlight_all = 1
+
 "hilight systax from start of file
 autocmd BufEnter * :syntax sync fromstart
 
@@ -193,17 +196,26 @@ autocmd FileType tex :NoMatchParen
 set laststatus=2
 let g:airline_powerline_fonts=1
 
+
 " ================ Airlineish
-let g:airline_theme = 'airlineish'
+"let g:airline_theme = 'airlineish'
+let g:airline_theme = 'powerlineish'
 
 " ================ Syntastic
+highlight SyntasticWarning NONE
+highlight SyntasticError NONE
+let g:syntastic_echo_current_error=0
+let g:syntastic_error_symbol='xx'
+let g:syntastic_warning_symbol='>>'
+let g:syntastic_style_error_symbol='>>'
+let g:syntastic_style_warning_symbol='>>'
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 0
 
 " syntax checker: https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers
 "let g:syntastic_python_checkers = ['pylint']
