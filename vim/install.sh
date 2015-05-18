@@ -23,7 +23,7 @@ mkdir -p "${VIM_PATH}"
 
 echo "[>] Installing COLORSCHEMES ..."
 mkdir -p "${COLOR_PATH}"
-curl -LSso "${COLOR_PATH}/luna-term.vim" https://raw.githubusercontent.com/Pychimp/vim-luna/master/colors/luna-term.vim
+curl -LSso "${COLOR_PATH}/luna-term.vim" https://raw.githubusercontent.com/notpratheek/vim-luna/master/colors/luna-term.vim
 curl -LSso "${COLOR_PATH}/molokai.vim" https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
 curl -LSso "${COLOR_PATH}/256-jungle.vim" https://raw.githubusercontent.com/vim-scripts/256-jungle/master/colors/256-jungle.vim
 curl -LSso "${COLOR_PATH}/harlequin.vim" https://raw.githubusercontent.com/nielsmadan/harlequin/master/colors/harlequin.vim

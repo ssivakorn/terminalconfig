@@ -40,8 +40,7 @@ set expandtab
 set ts=4
 set cindent
 
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
