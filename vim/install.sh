@@ -18,7 +18,7 @@ cp vimrc ~/.vimrc
 
 echo "[>] Installing SYNTAX ..."
 mkdir -p "${VIM_PATH}"
-cp -rf ${SYNTAX}  "${VIM_PATH}/."
+#cp -rf ${SYNTAX}  "${VIM_PATH}/."
 
 
 echo "[>] Installing COLORSCHEMES ..."
