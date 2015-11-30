@@ -167,14 +167,6 @@ colorscheme luna-term
 call SetColor()
 call SetCursorStyle()
 
-autocmd FileType c
-        \ colorscheme 256-jungle |
-        \ call SetColor() |
-        \ call SetCursorStyle()
-autocmd FileType cpp
-        \ colorscheme 256-jungle |
-        \ call SetColor() |
-        \ call SetCursorStyle()
 autocmd FileType tex
         \ colorscheme harlequin |
         \ call SetColor() |
@@ -184,7 +176,8 @@ autocmd FileType tex
 " ================ LaTeX ============================
 " faster scrolling in tex file
 autocmd FileType tex :NoMatchParen
-
+" set auto new line
+autocmd FileType tex :set tw=78
 
 " ================ Plugins  =========================
 
@@ -203,7 +196,7 @@ let g:airline_theme = 'powerlineish'
 " ================ Syntastic
 highlight SyntasticWarning NONE
 highlight SyntasticError NONE
-let g:syntastic_echo_current_error=0
+let g:syntastic_echo_current_error = 1
 let g:syntastic_error_symbol='xx'
 let g:syntastic_warning_symbol='>>'
 let g:syntastic_style_error_symbol='>>'
@@ -217,7 +210,8 @@ let g:syntastic_style_warning_symbol='>>'
 let g:syntastic_check_on_wq = 0
 
 " syntax checker: https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers
-"let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_pylint_args = '-d C0111'
 let g:syntastic_python_python_use_codec = 1
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_html_checkers = ['w3']
