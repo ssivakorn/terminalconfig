@@ -24,6 +24,8 @@ Below terminal colors stolen from:
 ```
 ![alt text](http://misc.flogisoft.com/_media/bash/colors_format/256_colors_fg.png "Foreground Text")
 
+bashrc generator: http://bashrcgenerator.com/
+
 * Background Text Color
 ```
 [48;5;ColorNumberm
