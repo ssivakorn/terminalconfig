@@ -24,7 +24,6 @@ Below terminal colors stolen from:
 ```
 ![alt text](http://misc.flogisoft.com/_media/bash/colors_format/256_colors_fg.png "Foreground Text")
 
-bashrc generator: http://bashrcgenerator.com/
 
 * Background Text Color
 ```
@@ -40,6 +39,18 @@ $ ./colors.sh
 use this script to show full colors
 ```shell
 $ ./fullcolors.py
+```
+
+bashrc generator
+--------------------
+Link: http://bashrcgenerator.com/
+Sample colors for PS1 prompts:
+```
+# Royal Blue:
+PS1='${debian_chroot:+($debian_chroot)}\[\033[48;5;20m\]\u@\h\[$(tput sgr0)\]\[\033[00m\]:\w\\$ \[$(tput sgr0)\]'
+# Dark Blue:
+PS1='${debian_chroot:+($debian_chroot)}\[\033[48;5;18m\]\u@\h\[$(tput sgr0)\]\[\033[00m\]:\w\\$ \[$(tput sgr0)\]'
+
 ```
 
 terminal preset color theme
