@@ -64,6 +64,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 # Prepare status line and color prompt
+# sleep 0.05 # sometimes, you need to wait for .profile to be loaded
 let fillsize=${COLUMNS}-11
 fill=""
 while [ "$fillsize" -gt "0" ]
