@@ -2,8 +2,10 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# my bin path
+# my own commands
 PATH=~/bin:"$PATH"
+VIRTUAL_ENV_DISABLE_PROMPT="1" # Disable virtualenv
+
 
 export TERM="xterm-256color"
 export PAGER="most"
@@ -62,29 +64,7 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
-
-# Prepare status line and color prompt
-# sleep 0.05 # sometimes, you need to wait for .profile to be loaded
-let fillsize=${COLUMNS}-11
-fill=""
-while [ "$fillsize" -gt "0" ]
-do
-    fill="—${fill}" # fill
-    let fillsize=${fillsize}-1
-done
-
-
-reset_style="\[\033[00m\]"
-status_line="${reset_style}\[\033[0;90m\]${fill} [\t]\n"
-prompt_line="${reset_style}\[\033[38;5;27m\]\u@\h${reset_style}:\w\$ "
-command_style="${reset_style}" # \[\033[1;29m\]" # bold black
-
-if [ "$color_prompt" = yes ]; then
-    PS1="${status_line}${debian_chroot:+($debian_chroot)}${prompt_line}"
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
+#unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -94,6 +74,38 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+# Prepare personalize status line and color prompt
+function set_promptcmd {
+
+    let fillsize=${COLUMNS}-11
+    fill=""
+    while [ "$fillsize" -gt "0" ]
+    do
+        fill="—${fill}" # fill
+        let fillsize=${fillsize}-1
+    done
+
+    reset_style="\[\033[00m\]"
+    status_line="${reset_style}\[\033[0;90m\]${fill} [\t]\n"
+    prompt_line="${reset_style}\[\033[38;5;27m\]\u@\h${reset_style}:\w\$ "
+
+    if [ -n "$VIRTUAL_ENV" ]
+    then
+        py_virtualenv=`basename $VIRTUAL_ENV`
+        prompt_line="${reset_style}(${py_virtualenv})\[\033[38;5;27m\]\u@\h${reset_style}:\w\$ "
+    fi
+    command_style="${reset_style}" # \[\033[1;29m\]" # bold black
+
+    if [ "$color_prompt" = yes ]; then
+        PS1="${status_line}${debian_chroot:+($debian_chroot)}${prompt_line}"
+    else
+        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    fi
+}
+
+
+PROMPT_COMMAND=set_promptcmd
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -135,3 +147,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
