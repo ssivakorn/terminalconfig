@@ -20,16 +20,21 @@ Below terminal colors stolen from:
 
 * Foreground Text Color
 ```
-[38;5;ColorNumberm
+[38;5;<ColorNumber>m
 ```
 ![alt text](http://misc.flogisoft.com/_media/bash/colors_format/256_colors_fg.png "Foreground Text")
 
 
 * Background Text Color
 ```
-[48;5;ColorNumberm
+[48;5;<ColorNumber>m
 ```
 ![alt text](http://misc.flogisoft.com/_media/bash/colors_format/256_colors_bg.png "Background Text")
+
+* Combine foreground and background
+```
+[38;5<ForegroundColorNumber>;48;5<BackgroundColorNumber>m
+```
 
 * Display all terminal colors
 ```shell
