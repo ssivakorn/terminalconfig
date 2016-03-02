@@ -10,7 +10,7 @@ function set_promptcmd {
     RESET_COLOR="\[\033[00m\]"
     LIGHTGREY="\[\033[38;5;245m\]"
     GREEN="\[\033[38;5;34m\]"
-    BLUE="\[033[38;5;27m\]"
+    BLUE="\[\033[38;5;27m\]"
     ORANGE="\[\033[38;5;208m\]"
     PINK="[\033[38;5;205m\]"
     YELLOW="\[\033[38;5;3m\]"
@@ -26,7 +26,7 @@ function set_promptcmd {
     MYCOLORS[7]=$PURPLE
 
     ###########################
-    MAINCOLOR=${MYCOLORS[$1]}
+    MAINCOLOR="${MYCOLORS[$1]}"
 
     let fillsize=${COLUMNS}
     fill=""

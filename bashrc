@@ -76,7 +76,8 @@ xterm*|rxvt*)
 esac
 
 # Prepare personalize status line and color prompt
-PROMPT_COMMAND='set_promptcmd "3"'
+source ~/.promptrc
+PROMPT_COMMAND='set_promptcmd 3'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
