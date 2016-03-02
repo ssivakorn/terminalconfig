@@ -76,36 +76,7 @@ xterm*|rxvt*)
 esac
 
 # Prepare personalize status line and color prompt
-function set_promptcmd {
-
-    let fillsize=${COLUMNS}-11
-    fill=""
-    while [ "$fillsize" -gt "0" ]
-    do
-        fill="—${fill}" # fill
-        let fillsize=${fillsize}-1
-    done
-
-    reset_style="\[\033[00m\]"
-    status_line="${reset_style}\[\033[0;90m\]${fill} [\t]\n"
-    prompt_line="${reset_style}\[\033[38;5;27m\]\u@\h${reset_style}:\w\$ "
-
-    if [ -n "$VIRTUAL_ENV" ]
-    then
-        py_virtualenv=`basename $VIRTUAL_ENV`
-        prompt_line="${reset_style}(${py_virtualenv})\[\033[38;5;27m\]\u@\h${reset_style}:\w\$ "
-    fi
-    command_style="${reset_style}" # \[\033[1;29m\]" # bold black
-
-    if [ "$color_prompt" = yes ]; then
-        PS1="${status_line}${debian_chroot:+($debian_chroot)}${prompt_line}"
-    else
-        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    fi
-}
-
-
-PROMPT_COMMAND=set_promptcmd
+PROMPT_COMMAND='set_promptcmd "3"'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

@@ -1,0 +1,53 @@
+#!/bin/bash
+# Save this file to .promptrc in home directory to enable prompt style and color
+# Author: Suphannee Sivakorn (https://github.com/ssivakorn)
+# Color can be picked from http://geoff.greer.fm/lscolors/
+
+# Prepare personalize prompt status style and color
+function set_promptcmd {
+
+   # Define my personal colors
+    RESET_COLOR="\[\033[00m\]"
+    LIGHTGREY="\[\033[38;5;245m\]"
+    GREEN="\[\033[38;5;34m\]"
+    BLUE="\[033[38;5;27m\]"
+    ORANGE="\[\033[38;5;208m\]"
+    PINK="[\033[38;5;205m\]"
+    YELLOW="\[\033[38;5;3m\]"
+    PURPLE="\[\033[38;5;141m\]"
+
+    MYCOLORS[0]=$RESET_COLOR
+    MYCOLORS[1]=$LIGHTGREY
+    MYCOLORS[2]=$GREEN
+    MYCOLORS[3]=$BLUE
+    MYCOLORS[4]=$ORANGE
+    MYCOLORS[5]=$PINK
+    MYCOLORS[6]=$YELLOW
+    MYCOLORS[7]=$PURPLE
+
+    ###########################
+    MAINCOLOR=${MYCOLORS[$1]}
+
+    let fillsize=${COLUMNS}
+    fill=""
+    while [ "$fillsize" -gt "0" ]
+    do
+        fill="${fill}░" # fill
+        let fillsize=${fillsize}-1
+    done
+
+    fill="${fill}"
+    liner_line="${RESET_COLOR}${MAINCOLOR}${fill}${RESET_COLOR}\n"
+    status_line="${RESET_COLOR}${LIGHTGREY}» \@ "
+    prompt_line="${RESET_COLOR}${MAINCOLOR}» \u@\h${RESET_COLOR} \$ "
+
+    if [ -n "$VIRTUAL_ENV" ]
+    then
+        py_virtualenv=`basename $VIRTUAL_ENV`
+        status_line="${RESET_COLOR}${LIGHTGREY}» \@ (${py_virtualenv}) "
+    fi
+    status_line="${status_line}\w"
+    command_style="${RESET_COLOR}" # \[\033[1;29m\]" # bold black
+
+    export PS1="${liner_line}${status_line}\n${prompt_line}${command_style}"
+}
