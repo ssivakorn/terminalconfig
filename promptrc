@@ -32,14 +32,14 @@ function set_promptcmd {
     fill=""
     while [ "$fillsize" -gt "0" ]
     do
-        fill="${fill}…" # fill
+        fill="${fill}—" # fill
         let fillsize=${fillsize}-1
     done
 
     fill="${fill}"
     liner_line="${RESET_COLOR}${MAINCOLOR}${fill}${RESET_COLOR}\n"
-    status_line="${RESET_COLOR}${LIGHTGREY}» \@ "
-    prompt_line="${RESET_COLOR}${MAINCOLOR}» \u@\h${RESET_COLOR} \$ "
+    status_line="${RESET_COLOR}${LIGHTGREY}[\@] "
+    prompt_line="${RESET_COLOR}${MAINCOLOR}[\u@\h]${RESET_COLOR} \$ "
 
     if [ -n "$VIRTUAL_ENV" ]
     then
