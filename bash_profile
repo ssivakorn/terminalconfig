@@ -7,7 +7,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagaced
 
 source ~/.promptrc
-PROMPT_COMMAND='set_promptcmd "2"' # select color number from .promptrc
+PROMPT_COMMAND='set_promptcmd "green"' # select color from .promptrc
 
 # bin path
 export PATH="/usr/local/bin:$PATH"

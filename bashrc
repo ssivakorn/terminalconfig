@@ -77,7 +77,7 @@ esac
 
 # Prepare personalize status line and color prompt
 source ~/.promptrc
-PROMPT_COMMAND='set_promptcmd 3'
+PROMPT_COMMAND='set_promptcmd "blue"'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
