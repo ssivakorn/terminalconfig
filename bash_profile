@@ -14,4 +14,4 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
 # personal bin path /home/user/bin
-export PATH="~/bin:$PATH" # personal bin path /home/user/bin
+export PATH="~/.bin:$PATH" # personal bin path /home/user/bin
