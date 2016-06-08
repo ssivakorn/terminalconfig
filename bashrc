@@ -3,7 +3,7 @@
 # for examples
 
 # my own commands
-PATH=~/bin:"$PATH"
+PATH=~/.bin:"$PATH"
 VIRTUAL_ENV_DISABLE_PROMPT="1" # Disable virtualenv
 
 
