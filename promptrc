@@ -82,7 +82,7 @@ function set_promptcmd {
 
     fill="${fill}"
     #liner_line="${RESET}${FGCOLOR}${fill}${RESET}\n"
-    liner_line=""
+    liner_line="\n"
     status_line="${FGGREY}\@ • "
     #prompt_line="${RESET}${BGCOLOR}${FGBLACK}\u@\h \$ ${RESET}${FGCOLOR} ${RESET}"
     prompt_line="${RESET}${BGCOLOR}${FGBLACK}\u@\h \$ ${RESET}${FGCOLOR} ${RESET}"
