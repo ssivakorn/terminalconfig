@@ -89,7 +89,7 @@ function set_promptcmd {
     if [ -n "$VIRTUAL_ENV" ]
     then
         py_virtualenv=`basename $VIRTUAL_ENV`
-        status_line="${RESET}${LIGHTGREY}\@ • (${py_virtualenv}) "
+        status_line="${RESET}${FGGREY}\@ • (${py_virtualenv}) "
     fi
     status_line="${status_line}\w ${RESET}"
     command_style="${RESET}" # \[\033[1;29m\]" # bold black
