@@ -84,7 +84,8 @@ function set_promptcmd {
     #liner_line="${RESET}${FGCOLOR}${fill}${RESET}\n"
     liner_line=""
     status_line="${FGGREY}\@ • "
-    prompt_line="${RESET}${BGCOLOR}${FGBLACK}\u@\h \$ ${RESET}${FGCOLOR} ${RESET}"
+    #prompt_line="${RESET}${BGCOLOR}${FGBLACK}\u@\h \$ ${RESET}${FGCOLOR} ${RESET}"
+    prompt_line="${RESET}${BGCOLOR}${FGBLACK}\u@\h \$ ${RESET}${FGCOLOR} ${RESET}"
 
     if [ -n "$VIRTUAL_ENV" ]
     then
