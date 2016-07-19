@@ -21,7 +21,9 @@ function set_promptcmd {
     PINK="205"
     YELLOW="3"
     PURPLE="141"
-
+    DARKGREEN="22"
+    LIGHTBLUE="51"
+    
     FGCOLOR="$GREEN_FG"
     BGCOLOR="$GREEN_FG"
 
@@ -30,12 +32,18 @@ function set_promptcmd {
             FGCOLOR=$GREEN
             BGCOLOR=$GREEN
             ;;
-
+        darkgreen)
+            FGCOLOR=$DARKGREEN
+            BGCOLOR=$DARKGREEN
+            ;;
         blue)
             FGCOLOR=$BLUE
             BGCOLOR=$BLUE
             ;;
-
+        lightblue
+            FGCOLOR=$LIGHTBLUE
+            BGCOLOR=$LIGHTBLUE
+            ;;
         orange)
             FGCOLOR=$ORANGE
             BGCOLOR=$ORANGE
