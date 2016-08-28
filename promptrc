@@ -40,7 +40,7 @@ function set_promptcmd {
             FGCOLOR=$BLUE
             BGCOLOR=$BLUE
             ;;
-        lightblue
+        lightblue)
             FGCOLOR=$LIGHTBLUE
             BGCOLOR=$LIGHTBLUE
             ;;
