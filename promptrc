@@ -21,7 +21,9 @@ function set_promptcmd {
     PINK="205"
     YELLOW="3"
     PURPLE="141"
-
+    DARKGREEN="22"
+    LIGHTBLUE="51"
+    
     FGCOLOR="$GREEN_FG"
     BGCOLOR="$GREEN_FG"
 
@@ -30,12 +32,18 @@ function set_promptcmd {
             FGCOLOR=$GREEN
             BGCOLOR=$GREEN
             ;;
-
+        darkgreen)
+            FGCOLOR=$DARKGREEN
+            BGCOLOR=$DARKGREEN
+            ;;
         blue)
             FGCOLOR=$BLUE
             BGCOLOR=$BLUE
             ;;
-
+        lightblue)
+            FGCOLOR=$LIGHTBLUE
+            BGCOLOR=$LIGHTBLUE
+            ;;
         orange)
             FGCOLOR=$ORANGE
             BGCOLOR=$ORANGE
@@ -82,14 +90,15 @@ function set_promptcmd {
 
     fill="${fill}"
     #liner_line="${RESET}${FGCOLOR}${fill}${RESET}\n"
-    liner_line=""
+    liner_line="\n"
     status_line="${FGGREY}\@ • "
-    prompt_line="${RESET}${BGCOLOR}${FGBLACK}\u@\h \$ ${RESET}${FGCOLOR} ${RESET}"
+    #prompt_line="${RESET}${BGCOLOR}${FGBLACK}\u@\h \$ ${RESET}${FGCOLOR} ${RESET}"
+    prompt_line="${RESET}${BGCOLOR}${FGBLACK}\u@\h \$ ${RESET}${FGCOLOR} ${RESET}"
 
     if [ -n "$VIRTUAL_ENV" ]
     then
         py_virtualenv=`basename $VIRTUAL_ENV`
-        status_line="${RESET}${LIGHTGREY}\@ • (${py_virtualenv}) "
+        status_line="${RESET}${FGGREY}\@ • (${py_virtualenv}) "
     fi
     status_line="${status_line}\w ${RESET}"
     command_style="${RESET}" # \[\033[1;29m\]" # bold black
