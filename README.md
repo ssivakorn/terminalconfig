@@ -70,6 +70,7 @@ $ export PAGER="/usr/bin/most -s"
 ```
 <h2>Tmux Configuration</h2>
 Basic tmux configuration:
+
 ```shell
 $ cp tmux.conf ~/.tmux.conf
 ```
