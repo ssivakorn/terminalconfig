@@ -45,6 +45,7 @@ $ ./fullcolors.py
 <h2>bashrc Generator</h2>
 Link: http://bashrcgenerator.com/
 Sample colors for PS1 prompts:
+
 ```
 # Royal Blue:
 PS1='${debian_chroot:+($debian_chroot)}\[\033[48;5;20m\]\u@\h\[$(tput sgr0)\]\[\033[00m\]:\w\\$ \[$(tput sgr0)\]'
@@ -70,6 +71,7 @@ $ export PAGER="/usr/bin/most -s"
 ```
 <h2>Tmux Configuration</h2>
 Basic tmux configuration:
+
 ```shell
 $ cp tmux.conf ~/.tmux.conf
 ```
