@@ -1,24 +1,11 @@
-function  fish_prompt
-    #set -l home_escaped (echo -n $HOME | sed 's/\//\\\\\//g')
-    #set -l pwd (echo -n $PWD | sed "s/^$home_escaped/~/" | sed 's/ /%20/g')
-    set -l pwd (prompt_pwd)
-    set -l prompt_user_color
-
-    switch $USER
-        case root toor
-            set prompt_user_color 'red'
-        case '*'
-            set prompt_user_color 'normal'
-    end
-
-    echo
-    set_color grey
-    echo $pwd
-    set_color $prompt_user_color
-    echo -n $USER@(prompt_hostname)' ❯❯❯ '
-    set_color normal
-
-    #printf "\n%s%s\n%s%s@%s ❯❯❯%s " (set_color grey) $pwd \
-    #        (set_color $prompt_user_color) $USER (prompt_hostname) (set_color normal)
-
+function fish_prompt --description 'Write out the prompt'
+	set -l home_escaped (echo -n $HOME | sed 's/\//\\\\\//g')
+   set -l pwd (echo -n $PWD | sed "s/^$home_escaped/~/" | sed 's/ /%20/g')
+   set -l prompt_symbol ''
+   switch $USER
+       case root toor; set prompt_symbol '>'
+       case '*';  set prompt_symbol '>'
+   end
+   printf "\n%s%s@%s%s:%s%s%s\n%s " (set_color 00FF00) $USER (hostname -s) (set_color normal) \
+				    (set_color 6c6c6c) $pwd (set_color normal) $prompt_symbol
 end
