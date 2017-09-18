@@ -7,8 +7,14 @@ function fish_prompt --description 'Write out the prompt'
         case '*';  set prompt_symbol '$'
     end
 
-    printf "\n%s%s@%s%s:%s%s%s\n%s%s%s " \
-        (set_color 00FF00 --bold) $USER (hostname -s) (set_color normal) \
-		(set_color 6c6c6c --bold) $pwd (set_color normal) \
-        (set_color efefef --bold) $prompt_symbol (set_color normal)
+    printf "\n"
+    printf "%s%s%s" (set_color 5fd700 --bold) $USER (set_color normal)
+    printf "%s@%s"  (set_color 5fd700 --bold) (set_color normal)
+    printf "%s%s%s" (set_color 5fd700 --bold) (hostname -s) (set_color normal)
+    printf "%s:%s"  (set_color 5fd700 --bold) (set_color normal)
+    printf "%s%s%s" (set_color 6c6c6c) $pwd (set_color normal)
+    printf " "
+    printf "%s%s%s" (set_color efefef --bold) $prompt_symbol (set_color normal)
+    printf " "
+
 end
