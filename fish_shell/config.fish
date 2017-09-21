@@ -17,7 +17,7 @@ set fish_color_operator 00db16
 set fish_color_param 71a4d9
 set fish_color_quote f9da65
 set fish_color_redirection d75faf
-set fish_color_search_match --background=005faf
+set fish_color_search_match --background=363636
 set fish_color_selection 000000
 set fish_color_status ff0000
 set fish_color_valid_path --underline
