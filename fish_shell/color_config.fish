@@ -1,7 +1,3 @@
-
-# Set greeting text
-set fish_greeting
-
 # Set prompt variable color
 set fish_color_autosuggestion 777777
 set fish_color_cancel ff0000 --bold
