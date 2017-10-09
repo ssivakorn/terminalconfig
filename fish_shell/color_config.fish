@@ -1,6 +1,8 @@
 # Set prompt variable color
 set fish_color_autosuggestion 777777
 set fish_color_cancel --bold ff0000
+
+#set fish_color_command 00afaf
 set fish_color_command ffffff
 set fish_color_comment 5f5f5f
 set fish_color_end --bold ff0087
@@ -13,8 +15,8 @@ set fish_color_operator 00db16
 set fish_color_param 0087ff
 set fish_color_quote ffd700
 set fish_color_redirection --bold ff8700
-set fish_color_search_match --background=363636
-set fish_color_selection 000000
+set fish_color_search_match --background=414a4c
+set fish_color_selection --background=414a4c
 set fish_color_status ff0000
 set fish_color_valid_path --underline
 
