@@ -16,7 +16,7 @@ function fish_prompt --description 'Write out the prompt'
     printf "\n"
     # virtualenv
     if test $VIRTUAL_ENV
-        printf "%s %s %s" (set color -b 470000 ebebeb) (basename $VIRTUAL_ENV) (set_color normal)
+        printf "%s %s %s" (set_color -b 222222 ebebeb) (basename $VIRTUAL_ENV) (set_color normal)
         printf " "
     end
 
