@@ -30,7 +30,26 @@ function fish_prompt --description 'Write out the prompt'
     printf "%s%s%s" (set_color 6c6c6c) $pwd (set_color normal)
 
     # version control system (git, svn)
-    printf "%s%s%s" (set_color b8860b) (__fish_vcs_prompt) (set_color normal)
+    set -l vcs (__fish_vcs_prompt)
+    set -l color_dirty (echo $fish_color_autosuggestion)
+    if [ $vcs ]
+        printf " "
+        set -l vcs (echo $vcs | sed 's/(//' | sed 's/)//' | tr -d ' ')
+        set dirty ""
+
+        if [ (__fish_git_prompt) ]
+            if [ (__fish_git_prompt_dirty) ]
+                set dirty '×'
+                set color_dirty '8b0000'
+            #else
+                #set color_dirty '006400'
+            end
+        end
+        printf "%s[" (set_color $color_dirty)
+        printf "%s" $vcs
+        printf "%s]%s" (set_color $color_dirty) $dirty
+        printf "%s" (set_color normal)
+    end
 
     # prompt symbol
     printf " "
