@@ -39,8 +39,8 @@ function fish_prompt --description 'Write out the prompt'
 
         if [ (__fish_git_prompt) ]
             if [ (__fish_git_prompt_dirty) ]
-                set dirty '×'
-                set color_dirty '8b0000'
+                #set dirty '×'
+                set color_dirty 'bb0000'
             #else
                 #set color_dirty '006400'
             end
@@ -53,7 +53,7 @@ function fish_prompt --description 'Write out the prompt'
 
     # prompt symbol
     printf " "
-    printf "%s%s%s" (set_color efefef --bold) $prompt_symbol (set_color normal)
+    printf "%s%s%s" (set_color normal --bold) $prompt_symbol (set_color normal)
     printf " "
 
 end
