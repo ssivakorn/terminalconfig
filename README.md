@@ -1,7 +1,22 @@
 <h1>TerminalConfig</h1>
-Simple terminal configurations for Mac / Linux environment includes:
+My simple terminal configurations for Mac and Linux environment includes:
 
-<h2>Terminal colors</h2>
+<h2>Tmux Configuration</h2>
+Basic tmux configuration:
+
+```shell
+$ cd tmux
+$ ./setup.sh
+```
+<h2>Fish shell</h2>
+
+```sh
+$ cd fish_shell
+$ ./setup
+```
+<h2>Bash shell</h2>
+Basic bash shell 256 (8-bit) color configure:
+
 * **Mac**
 save .bash_profile into home directory: /home/user/.bash_profile
 * **Linux**
@@ -42,17 +57,6 @@ use this script to show full colors
 $ ./fullcolors.py
 ```
 
-<h2>bashrc Generator</h2>
-Link: http://bashrcgenerator.com/
-Sample colors for PS1 prompts:
-
-```
-# Royal Blue:
-PS1='${debian_chroot:+($debian_chroot)}\[\033[48;5;20m\]\u@\h\[$(tput sgr0)\]\[\033[00m\]:\w\\$ \[$(tput sgr0)\]'
-# Dark Blue:
-PS1='${debian_chroot:+($debian_chroot)}\[\033[48;5;18m\]\u@\h\[$(tput sgr0)\]\[\033[00m\]:\w\\$ \[$(tput sgr0)\]'
-
-```
 
 <h2>Terminal Color Theme</h2>
 Themes of iterm2 terminal color for Mac OS: http://iterm2colorschemes.com/
@@ -69,16 +73,3 @@ $ export PAGER="most"
 or
 $ export PAGER="/usr/bin/most -s"
 ```
-<h2>Tmux Configuration</h2>
-Basic tmux configuration:
-
-```shell
-$ cp tmux.conf ~/.tmux.conf
-```
-Credit: https://github.com/gpakosz/.tmux/
-
-To fix Vim copy in Mac OS:
-http://blog.firstiwaslike.com/working-with-the-macos-system-clipboard-in-vim-inside-tmux/
-
-<h2>Vim Configuration</h2>
-See https://github.com/ssivakorn/vimconfig for simple and light vim configuration.
