@@ -21,17 +21,19 @@ function fish_prompt --description 'Write out the prompt'
     end
 
     # user@hostname
-    printf "%s%s%s" (set_color 5fd700 --bold) $USER (set_color normal)
-    printf "%s@%s"  (set_color 5fd700 --bold) (set_color normal)
-    printf "%s%s%s" (set_color 5fd700 --bold) (hostname -s) (set_color normal)
-    printf "%s:%s"  (set_color 5fd700 --bold) (set_color normal)
+    set -l host_col 5fd700
+    set -l user_col 5fd700 # 0087ff
+    printf "%s%s%s" (set_color $user_col --bold) $USER (set_color normal)
+    printf "%s•%s"  (set_color normal --bold) (set_color normal)
+    printf "%s%s%s" (set_color $host_col --bold) (hostname -s) (set_color normal)
+    printf "%s:%s"  (set_color normal --bold) (set_color normal)
 
     # current directory
     printf "%s%s%s" (set_color 6c6c6c) $pwd (set_color normal)
 
     # version control system (git, svn)
     set -l vcs (__fish_vcs_prompt)
-    set -l color_dirty (echo $fish_color_autosuggestion)
+    set -l color_dirty 00af00
     if [ $vcs ]
         printf " "
         set -l vcs (echo $vcs | sed 's/(//' | sed 's/)//' | tr -d ' ')
