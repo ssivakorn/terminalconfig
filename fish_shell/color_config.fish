@@ -11,7 +11,7 @@ set fish_color_escape af5fff
 set fish_color_history_current --bold normal
 set fish_color_match ff00ae
 
-set fish_color_operator 00db16
+set fish_color_operator --bold 00db16
 set fish_color_param normal
 set fish_color_quote ffd700
 set fish_color_redirection --bold ff8700
