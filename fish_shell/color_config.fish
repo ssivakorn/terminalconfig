@@ -2,17 +2,17 @@
 
 set fish_color_autosuggestion 777777
 set fish_color_cancel --bold ff0000
+set fish_color_command --bold 0087ff
 
 set fish_color_comment 5f5f5f
 set fish_color_end --bold ff0087
 set fish_color_error --bold ff0000
 set fish_color_escape af5fff
-#set fish_color_history_current --bold ffffff
 set fish_color_history_current --bold normal
 set fish_color_match ff00ae
 
 set fish_color_operator 00db16
-set fish_color_param 0087ff
+set fish_color_param normal
 set fish_color_quote ffd700
 set fish_color_redirection --bold ff8700
 
