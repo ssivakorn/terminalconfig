@@ -1,13 +1,20 @@
 #!/bin/bash
 
-# TMUX plugins
-# rm -rf ~/.tmux/plugins/tpm
-# git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "Setting up tmux configurations"
+set -x
+# Remove current tmux configurations
+rm -rf ~/.tmux.conf
+
+# TMUX plugins (https://github.com/tmux-plugins)
+rm -rf ~/.tmux/plugins/tpm
+git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # TMUX configuration
 path=$(pwd)
 ln -s -f $path/tmux.conf $HOME/.tmux.conf
 
-# Setup required:
-# https://github.com/tmux-plugins/tmux-yank
-# https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
+set +x
+
+echo ""
+echo "Please activate all tmux-plugins: https://github.com/tmux-plugins"
+echo "tmux and prefix + I"
