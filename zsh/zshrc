@@ -152,13 +152,13 @@ DISABLE_LS_COLORS="true"
 plugins=(git fzf zsh-autosuggestions zsh-syntax-highlighting)
 
 
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
 ZSH_HIGHLIGHT_STYLES[command]='fg=33'
 ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=82'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
