@@ -18,7 +18,9 @@ ln -f -s $path/omf/init.fish $HOME/.config/omf/init.fish
 # ln -f -s $path/fish_prompt.fish $HOME/.config/fish/functions/fish_prompt.fish
 ln -f -s $path/fish_right_prompt.fish $HOME/.config/fish/functions/fish_right_prompt.fish
 
-exec $(which fish) -l && omf install kawasaki
+exec $(which fish) -l
+
+omf install kawasaki
 
 # Color
 fish basic_config.fish
