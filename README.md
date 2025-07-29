@@ -4,17 +4,26 @@ My simple terminal configurations for Mac and Linux environment includes:
 <h2>Tmux Configuration</h2>
 Basic tmux configuration:
 
-```shell
+```sh
 $ cd tmux
 $ ./setup.sh
 ```
-<h2>Fish shell</h2>
+<h2>fish ⋊> </h2>
+fish shell: https://fishshell.com/
 
 ```sh
-$ cd fish_shell
+$ cd fish
 $ ./setup
 ```
-<h2>Bash shell</h2>
+<h2>zsh %_</h2>
+Zsh: https://www.zsh.org/
+
+```sh
+$ cd zsh
+$ ./setup
+```
+
+<h2>bash</h2>
 Basic bash shell 256 (8-bit) color configure:
 
 * **Mac**
