@@ -62,7 +62,7 @@ DISABLE_LS_COLORS="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+# HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -78,23 +78,40 @@ plugins=(git git-prompt fzf zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-ZSH_HIGHLIGHT_STYLES[command]='fg=33'
-ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=82'
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
+ZSH_HIGHLIGHT_STYLES[command]='fg=33'                   # bright blue
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=118'            # lime green
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=196,bold'       # red
+ZSH_HIGHLIGHT_STYLES[path]='underline'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=215'   # orange-ish yellow
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=215'   # orange-ish yellow
+ZSH_HIGHLIGHT_STYLES[assign]='fg=135'                   # purple
+ZSH_HIGHLIGHT_STYLES[comment]='fg=240'                  # grey
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=43,bold'
 
+export TERM=xterm-256color
+export COLORTERM=truecolor
+
+# Define common colors
 color_normal='%f'
-color_error='%F{red}'
-color_user='%F{#087fff}'
-color_host='%F{#1eb980}'
-color_sep='%F{#b15dff}'
-color_prompt='%F{#ff3399}'
-color_time='%F{#555555}'
-color_virtualenv='%F{#ff8C00}'
-color_branch_dirty='%F{#fec20f}'
-color_branch_clean='%F{#96c93c}'
+color_grey='%F{240}'
+color_red='%F{1}'                   # red
+color_green='%F{118}'               # lime green #96c93c
+color_blue='%F{33}'                 # bright blue #087fff
+color_yellow='%F{215}'              # orange-ish yellow
+
+# Define prompt colors
+color_error=$color_red
+color_user=$color_blue
+color_host='%F{42}'                 # sea green/teal #1eb980
+color_sep='%F{135}'                 # purple #ff3399
+color_prompt='%F{199}'              # hot pink #ff3399
+color_time=$color_grey
+color_virtualenv='%F{#ff8c00}'      # dark orange #ff8c00
+color_branch_dirty=$color_yellow
+color_branch_clean=$color_green
 color_path=$color_normal
 
-prompt_char='$'
+prompt_char='$ '
 prompt_userhost_sep='@'
 
 
@@ -102,22 +119,22 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 function virtualenv_prompt {
   if [[ -n "$VIRTUAL_ENV" ]]; then
     local venv_name="${VIRTUAL_ENV##*/}"
-    echo "%F{#555555}(${color_virtualenv}${venv_name}%F{#555555})${color_normal} "
+    echo "${color_grey}(${color_virtualenv}${venv_name}${color_grey})${color_normal} "
   fi
 }
 
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%F{#555555}[${color_normal}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%F{#555555}]${color_normal}"
+ZSH_THEME_GIT_PROMPT_PREFIX="${color_grey}[${color_normal}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="${color_grey}]${color_normal}"
 ZSH_THEME_GIT_PROMPT_SEPARATOR=" "
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}%{●%G%}"
 ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg[yellow]%}"
 
 PROMPT='${color_user}%n${color_sep}${prompt_userhost_sep}${color_host}%m${color_normal} %~ $(git_super_status)
-$(virtualenv_prompt)${color_prompt}${prompt_char}${color_normal} '
+$(virtualenv_prompt)${color_prompt}${prompt_char}${color_normal}'
 
 
-ZLE_RPROMPT_INDENT=0
+ZLE_RPROMPT_INDENT=1
 RPROMPT='${color_time}%D{%H:%M:%S}${color_normal}'
 
 export CLICOLOR=1
