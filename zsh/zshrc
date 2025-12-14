@@ -124,11 +124,10 @@ function virtualenv_prompt {
 }
 
 
-ZSH_THEME_GIT_PROMPT_PREFIX="${color_grey}[${color_normal}"
+ZSH_THEME_GIT_PROMPT_PREFIX="${color_grey}[git:${color_normal}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="${color_grey}]${color_normal}"
 ZSH_THEME_GIT_PROMPT_SEPARATOR=" "
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}%{●%G%}"
-ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg[yellow]%}"
+ZSH_THEME_GIT_PROMPT_BRANCH="${color_yellow}"
 
 PROMPT='${color_user}%n${color_sep}${prompt_userhost_sep}${color_host}%m${color_normal} %~ $(git_super_status)
 $(virtualenv_prompt)${color_prompt}${prompt_char}${color_normal}'
