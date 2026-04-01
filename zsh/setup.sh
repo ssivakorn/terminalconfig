@@ -9,6 +9,7 @@ curl https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh |
 rm $HOME/.zshrc
 ln -f -s $path/zshrc $HOME/.zshrc
 
+ln -f -s $path/../welcome.sh $HOME/.welcome.sh
 
 # Install/update plugins
 ZSH_CUSTOM=$HOME/.oh-my-zsh/custom

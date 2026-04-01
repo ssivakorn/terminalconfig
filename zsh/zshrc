@@ -169,3 +169,6 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Load welcome message
+[ -f ~/.welcome.sh ] && . ~/.welcome.sh
