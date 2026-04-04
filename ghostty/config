@@ -1,0 +1,17 @@
+# Ghostty Terminal Configuration
+
+theme = dark:iTerm2 Tango Dark,light:iTerm2 Tango Light
+
+background = 000000
+foreground = ffffff
+background-opacity = 0.85
+
+font-family = Menlo
+font-size = 12.5
+
+cursor-style = block
+
+window-width = 90
+window-height = 30
+
+macos-titlebar-style = transparent
