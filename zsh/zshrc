@@ -79,6 +79,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 ZSH_HIGHLIGHT_STYLES[command]='fg=33'                   # bright blue
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=33'                   # bright blue
+ZSH_HIGHLIGHT_STYLES[alias]='fg=33'                     # bright blue
 ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=118'            # lime green
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=196,underline'  # red
 ZSH_HIGHLIGHT_STYLES[path]='underline'
