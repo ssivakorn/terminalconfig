@@ -1,4 +1,9 @@
 # https://github.com/hastinbe/theme-kawasaki
+
+# Add ~/.local/bin to PATH if it exists
+if test -d $HOME/.local/bin
+    fish_add_path $HOME/.local/bin
+end
 set -g VIRTUAL_ENV_DISABLE_PROMPT 1
 
 ## Enable the time to be displayed.

@@ -1,84 +1,100 @@
-<h1>TerminalConfig</h1>
-My simple terminal configurations for Mac and Linux environment includes:
+# terminalconfig
 
-<h2>Tmux Configuration</h2>
-Basic tmux configuration:
+Personal terminal configuration dotfiles for Mac and Linux. Covers zsh, fish, bash, tmux, and Ghostty.
 
-```sh
-$ cd tmux
-$ ./setup.sh
-```
-<h2>fish ⋊> </h2>
-fish shell: https://fishshell.com/
+## Setup
+
+Each tool has its own subdirectory with a setup script. Scripts must be run from their own subdirectory (symlinks use `$(pwd)`):
 
 ```sh
-$ cd fish
-$ ./setup
+cd zsh && ./setup.sh       # installs oh-my-zsh + plugins, symlinks zshrc
+cd fish && ./setup         # installs oh-my-fish + kawasaki theme, symlinks fish configs
+cd tmux && ./setup         # installs tpm, symlinks tmux.conf
+cd ghostty && ./setup.sh   # symlinks ghostty/config to ~/.config/ghostty/config
 ```
-<h2>zsh %_</h2>
-Zsh: https://www.zsh.org/
+
+For bash, manually copy files to your home directory:
+
+| File | Destination |
+|------|-------------|
+| `bash_profile` | `~/.bash_profile` (Mac) |
+| `bashrc` | `~/.bashrc` (Linux) |
+
+---
+
+## Shells
+
+### zsh
+
+Uses [Oh My Zsh](https://ohmyz.sh/) with `ZSH_THEME=""` (no omz theme). The prompt is defined inline using `PROMPT`/`RPROMPT` variables with the `git_super_status` function from the `git-prompt` plugin.
+
+Plugins: `git`, `git-prompt`, `fzf`, `zsh-autosuggestions`, `zsh-syntax-highlighting`
+
+### fish
+
+Uses [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) with the [kawasaki](https://github.com/hastinbe/theme-kawasaki) theme. Theme variables in `fish/omf/init.fish` override kawasaki defaults to match the zsh color scheme.
+
+### bash
+
+256-color prompt configuration. Includes SSH host autocomplete and common aliases.
+
+---
+
+## Prompt Color Scheme
+
+Consistent palette across zsh and fish:
+
+| Element | Color | Hex |
+|---------|-------|-----|
+| User | Blue | `#087fff` |
+| Host | Teal | `#1eb980` |
+| Separator (`@`) | Purple | `#b15dff` |
+| Prompt character (`$`) | Hot pink | `#ff3399` |
+
+---
+
+## tmux
+
+- Prefix remapped to `C-a`
+- Pane splits: `|` (vertical) and `-` (horizontal), preserving current path
+- Vi copy mode: `v` to select, `y` to yank
+- Mouse: off by default, toggle with `prefix + m`
+- Status bar: session name, username, hostname, time, date
+- Plugin manager: [tpm](https://github.com/tmux-plugins/tpm) — after setup, activate plugins inside tmux with `prefix + I`
+
+---
+
+## Ghostty
+
+Minimal config — iTerm2 Tango Dark/Light themes, Menlo 12.5pt, 85% opacity, block cursor.
+
+---
+
+## PATH
+
+All shell configs (`zshrc`, `bashrc`, `bash_profile`) automatically add `~/.local/bin` to `$PATH` if the directory exists and is not already included:
 
 ```sh
-$ cd zsh
-$ ./setup
+[[ -d "$HOME/.local/bin" && ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$HOME/.local/bin:$PATH"
 ```
 
-<h2>bash</h2>
-Basic bash shell 256 (8-bit) color configure:
+For fish, the equivalent is handled via `fish_add_path` in `fish/omf/init.fish`.
 
-* **Mac**
-save .bash_profile into home directory: /home/user/.bash_profile
-* **Linux**
-save .bashrc into home directory: /home/user/.bashrc
+---
 
-**Terminal colors can be picked from:**
-* (4-bit colors) http://ciembor.github.io/4bit/
-* (8-bit colors) http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
-* http://misc.flogisoft.com/bash/tip_colors_and_formatting
+## Color Diagnostics
 
-Below terminal colors stolen from: http://misc.flogisoft.com/bash/tip_colors_and_formatting
+Scripts for testing terminal color support (no install needed):
 
-* Foreground Text Color
-```
-[38;5;<ColorNumber>m
-```
-![alt text](http://misc.flogisoft.com/_media/bash/colors_format/256_colors_fg.png "Foreground Text")
-
-
-* Background Text Color
-```
-[48;5;<ColorNumber>m
-```
-![alt text](http://misc.flogisoft.com/_media/bash/colors_format/256_colors_bg.png "Background Text")
-
-* Combine foreground and background
-```
-[38;5<ForegroundColorNumber>;48;5<BackgroundColorNumber>m
+```sh
+./colors.sh        # 8-bit 256-color palette
+./colors256.sh     # compact 256-color grid
+./truecolors1.sh   # truecolor gradient test
+python3 colors.py  # Python color output
 ```
 
-* Display all terminal colors
-```shell
-$ ./colors.sh
-```
-
-use this script to show full colors
-```shell
-$ ./fullcolors.py
-```
-
-
-<h2>Terminal Color Theme</h2>
-Themes of iterm2 terminal color for Mac OS: http://iterm2colorschemes.com/
-
-<h2>Fancy Man Page</h2>
-Give some colors to manual pages on Debian-based OS
-
-```shell
-$ sudo apt-get install most
-```
-
-```shell
-$ export PAGER="most"
-or
-$ export PAGER="/usr/bin/most -s"
-```
+**Color references:**
+- [4-bit colors](http://ciembor.github.io/4bit/)
+- [8-bit xterm color names](http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim)
+- [Bash colors and formatting](http://misc.flogisoft.com/bash/tip_colors_and_formatting)
+- [iTerm2 color themes](https://iterm2colorschemes.com/)

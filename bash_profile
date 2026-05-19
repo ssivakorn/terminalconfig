@@ -16,6 +16,9 @@ export PATH="/usr/local/sbin:$PATH"
 # personal bin path /home/user/bin
 export PATH="~/.bin:$PATH" # personal bin path /home/user/bin
 
+# Add ~/.local/bin to PATH if it exists and isn't already included
+[[ -d "$HOME/.local/bin" && ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$HOME/.local/bin:$PATH"
+
 # grep option color
 export GREP_OPTIONS='--color=auto'
 

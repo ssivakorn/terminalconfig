@@ -8,6 +8,9 @@ case $- in
       *) return;;
 esac
 
+# Add ~/.local/bin to PATH if it exists and isn't already included
+[[ -d "$HOME/.local/bin" && ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$HOME/.local/bin:$PATH"
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
