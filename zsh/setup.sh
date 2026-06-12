@@ -1,23 +1,24 @@
 #!/bin/bash
+set -e
 
 path=$(pwd)
 
 # Install omz
 # https://github.com/ohmyzsh/ohmyzsh
-rm -rf $HOME/.oh-my-zsh
+rm -rf "$HOME/.oh-my-zsh"
 curl https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
-rm $HOME/.zshrc
-ln -f -s $path/zshrc $HOME/.zshrc
+rm -f "$HOME/.zshrc"
+ln -f -s "$path/zshrc" "$HOME/.zshrc"
 
-ln -f -s $path/../welcome.sh $HOME/.welcome.sh
+ln -f -s "$path/../welcome.sh" "$HOME/.welcome.sh"
 
 # Install/update plugins
-ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
-mkdir -p $ZSH_CUSTOM
+mkdir -p "$ZSH_CUSTOM"
 
-rm -rf $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+rm -rf "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 
-rm -rf $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+rm -rf "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"

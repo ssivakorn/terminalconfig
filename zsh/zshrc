@@ -89,7 +89,7 @@ ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=196,underline'  # red
 ZSH_HIGHLIGHT_STYLES[path]='underline'
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=220'   # orange-ish yellow
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=220'   # orange-ish yellow
-ZSH_HIGHLIGHT_STYLES[assign]='fg=135'                   # purple
+ZSH_HIGHLIGHT_STYLES[assign]='fg=141'                   # purple
 ZSH_HIGHLIGHT_STYLES[comment]='fg=240'                  # grey
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=43,bold'
 
@@ -107,9 +107,9 @@ color_yellow='%F{215}'              # orange-ish yellow
 # Define prompt colors
 color_error=$color_red
 color_user=$color_blue
-color_host='%F{42}'                 # sea green/teal #1eb980
-color_sep='%F{135}'                 # purple #ff3399
-color_prompt='%F{199}'              # hot pink #ff3399
+color_host='%F{79}'                 # sea green/teal #1eb980
+color_sep='%F{141}'                 # purple #b15dff
+color_prompt='%F{205}'              # hot pink #ff3399
 color_time=$color_grey
 color_virtualenv='%F{208}'          # dark orange #ff8c00
 color_branch_dirty=$color_yellow

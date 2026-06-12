@@ -41,6 +41,6 @@ python3 colors.py  # Python color output
 
 **tmux** (`tmux/tmux.conf`): Prefix remapped to `C-a`. Pane splits with `|`/`-` preserving current path. Vi copy mode (`v` to select, `y` to yank). Mouse off by default, toggled with `prefix + m`. Status bar shows session name, username, hostname, time, and date. Plugin manager: [tpm](https://github.com/tmux-plugins/tpm) — after setup, activate plugins with `prefix + I` inside tmux.
 
-**Ghostty** (`ghostty/config`): Minimal config — iTerm2 Tango Dark/Light themes, Menlo 12.5pt, 85% opacity, block cursor.
+**Ghostty** (`ghostty/config`): Minimal config — iTerm2 Tango Dark/Light themes, Hack 12.5pt, 85% opacity, bar cursor.
 
 **welcome.sh**: Login greeting sourced by `zsh/zshrc` (symlinked to `~/.welcome.sh`). Prints a bordered welcome box with current date/time.

@@ -6,8 +6,8 @@ export TERM=xterm-256color
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagaced
 
-source ~/.promptrc
-PROMPT_COMMAND='set_promptcmd "green"' # select color from .promptrc
+[ -f ~/.promptrc ] && source ~/.promptrc
+[ -f ~/.promptrc ] && PROMPT_COMMAND='set_promptcmd "green"' # select color from .promptrc
 
 # bin path
 export PATH="/usr/local/bin:$PATH"

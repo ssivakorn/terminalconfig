@@ -1,7 +1,8 @@
 #!/bin/bash
+set -e
 
 echo "Setting up tmux configurations"
-set -x
+
 # Remove current tmux configurations
 rm -rf ~/.tmux.conf
 
@@ -11,9 +12,7 @@ git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # TMUX configuration
 path=$(pwd)
-ln -s -f $path/tmux.conf $HOME/.tmux.conf
-
-set +x
+ln -s -f "$path/tmux.conf" "$HOME/.tmux.conf"
 
 echo ""
 echo "Please activate all tmux-plugins: https://github.com/tmux-plugins"
