@@ -7,3 +7,7 @@ path=$(pwd)
 GHOSTTY_CONFIG="$HOME/.config/ghostty"
 mkdir -p "$GHOSTTY_CONFIG"
 ln -f -s "$path/config" "$GHOSTTY_CONFIG/config"
+
+
+# Ghotty icon file
+ln -f -s "$path/icons/ayu-dark.icns" "$GHOSTTY_CONFIG/dark.icns"

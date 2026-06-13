@@ -66,7 +66,8 @@ Consistent palette across zsh and fish:
 
 ## Ghostty
 
-Minimal config — iTerm2 Tango Dark/Light themes, Hack 12.5pt, 85% opacity, bar cursor.
+- Minimal config — iTerm2 Tango Dark/Light themes, Noto Mono for Powerline 12pt, 85% opacity, bar cursor.
+- Customized icon - https://github.com/jasonlong/ghostty-theme-icons
 
 ---
 
