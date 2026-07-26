@@ -20,25 +20,26 @@ COLOR_BORDER="$(printf '\033[38;5;%dm' $RANDOM_COLOR_CODE)"
 RESET="$(printf '\033[0m')"
 
 # ASCII Art Definitions - change these to swap arts
+
+ART_1_LINE1=""
+ART_1_LINE2=""
+ART_1_LINE3=""
+ART_1_LINE4=""
+
+
 # Art 1: Current monster
-ART1_LINE1="  🬢   🬖"
-ART1_LINE2=" 🬞▛███▜🬏"
-ART1_LINE3="🬔🬨█████🬕🬧"
-ART1_LINE4="  🬌🬋 🬋🬍"
+# ART1_LINE1="  🬢   🬖"
+# ART1_LINE2=" 🬞▛███▜🬏"
+# ART1_LINE3="🬔🬨█████🬕🬧"
+# ART1_LINE4="  🬌🬋 🬋🬍"
 
-# Art 2: New monster variant
-ART2_LINE1="  🬢   🬖"
-ART2_LINE2="🬣🬞▛███▜🬏🬘"
-ART2_LINE3=" 🬨█████🬕"
-ART2_LINE4="  🬘   🬣"
+# # Art 2: New monster variant
+# ART2_LINE1="  🬢   🬖"
+# ART2_LINE2="🬣🬞▛███▜🬏🬘"
+# ART2_LINE3=" 🬨█████🬕"
+# ART2_LINE4="  🬘   🬣"
 
-# # Art 3: Blocky monster
-# ART3_LINE1="🭏   🭄"
-# ART3_LINE2="█▛█▜█"
-# ART3_LINE3="█████"
-# ART3_LINE4="🬅 🬉 🬈"
-
-ART_COUNT=2
+ART_COUNT=1
 
 # Pick an art at random
 SELECTED_ART=$((RANDOM % ART_COUNT + 1))
@@ -101,8 +102,8 @@ row() {
 RULE=$(printf '%*s' $INNER_WIDTH '' | tr ' ' '-' | sed 's/-/─/g')
 
 printf " ${COLOR_BORDER}┌%s┐${RESET}\n" "$RULE"
-row "$ART_LINE1" "${COLOR_TEXT}Welcome back, Your Highness 👑${RESET}"
+row "$ART_LINE1" "${COLOR_TEXT}Welcome back, Your Highness 👾${RESET}"
 row "$ART_LINE2" "${COLOR_TIME}$(date '+%Y-%m-%d %H:%M %p')${RESET}"
-row "$ART_LINE3" ""
-row "$ART_LINE4" ""
+# row "$ART_LINE3" ""
+# row "$ART_LINE4" ""
 printf " ${COLOR_BORDER}└%s┘${RESET}\n" "$RULE"
