@@ -2,7 +2,7 @@
 
 Personal terminal configuration dotfiles for Mac and Linux. Covers zsh, fish, bash, tmux, and Ghostty.
 
-## Setup
+## Setup 🧰 🛠️
 
 Each tool has its own subdirectory with a setup script. Scripts must be run from their own subdirectory (symlinks use `$(pwd)`):
 
@@ -22,25 +22,25 @@ For bash, manually copy files to your home directory:
 
 ---
 
-## Shells
+## SHELLs
 
-### zsh
+### zsh %_
 
 Uses [Oh My Zsh](https://ohmyz.sh/) with `ZSH_THEME=""` (no omz theme). The prompt is defined inline using `PROMPT`/`RPROMPT` variables with the `git_super_status` function from the `git-prompt` plugin.
 
 Plugins: `git`, `git-prompt`, `fzf`, `zsh-autosuggestions`, `zsh-syntax-highlighting`
 
-### fish
+### fish 🐠
 
 Uses [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) with the [kawasaki](https://github.com/hastinbe/theme-kawasaki) theme. Theme variables in `fish/omf/init.fish` override kawasaki defaults to match the zsh color scheme.
 
-### bash
+### bash $_
 
 256-color prompt configuration. Includes SSH host autocomplete and common aliases.
 
 ---
 
-## Prompt Color Scheme
+## Prompt Color Scheme 🌈
 
 Consistent palette across zsh and fish:
 
@@ -64,7 +64,7 @@ Consistent palette across zsh and fish:
 
 ---
 
-## Ghostty
+## Ghostty 👻
 
 - Minimal config — iTerm2 Tango Dark/Light themes, Noto Mono for Powerline 12pt, 85% opacity, bar cursor.
 - Customized icon - https://github.com/jasonlong/ghostty-theme-icons
@@ -83,7 +83,7 @@ For fish, the equivalent is handled via `fish_add_path` in `fish/omf/init.fish`.
 
 ---
 
-## Color Diagnostics
+## Color Diagnostics 🌈 👀
 
 Scripts for testing terminal color support (no install needed):
 
