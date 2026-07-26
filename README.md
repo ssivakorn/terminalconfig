@@ -1,5 +1,14 @@
 # terminalconfig
 
+![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
+![zsh](https://img.shields.io/badge/zsh-F15A24?style=flat&logo=zsh&logoColor=white)
+![fish](https://img.shields.io/badge/fish-4aae47?style=flat&logo=fish&logoColor=white)
+![bash](https://img.shields.io/badge/bash-4EAA25?style=flat&logo=gnubash&logoColor=white)
+[![tmux](https://img.shields.io/badge/tmux-1BB91F?logo=tmux&logoColor=white)](#)
+[![Ghostty](https://custom-icon-badges.demolab.com/badge/Ghostty-0000ff?logo=ghostty_term)](#)
+<!-- ![GitHub last commit](https://img.shields.io/github/last-commit/ssivakorn/terminalconfig) -->
+
 Personal terminal configuration dotfiles for Mac and Linux. Covers zsh, fish, bash, tmux, and Ghostty.
 
 ## Setup 🧰 🛠️
