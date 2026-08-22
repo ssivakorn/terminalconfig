@@ -90,7 +90,6 @@ plugins=(
     # programming
     python
     pip
-    uv
 
     # zsh common
     zsh-autosuggestions zsh-syntax-highlighting
