@@ -83,16 +83,20 @@ plugins=(
     fzf
     history
     tmux
+    screen
     ssh
     command-not-found
 
     # programming
+    python
     pip
+    uv
 
-    # common plugins
+    # zsh common
     zsh-autosuggestions zsh-syntax-highlighting
 
     # others
+    themes
     emoji
 )
 
