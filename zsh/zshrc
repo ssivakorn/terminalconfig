@@ -198,3 +198,6 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Load welcome message
 [ -f ~/.welcome.sh ] && . ~/.welcome.sh
+
+# Added by Antigravity CLI installer
+export PATH="/Users/bo/.local/bin:$PATH"

@@ -14,7 +14,7 @@ while :; do
   break
 done
 
-COLOR_TEXT="$(printf '\033[38;5;15m\033[1m')"     # White and bold
+COLOR_TEXT="$(printf '\033[1m')"                  # Bold, default color
 COLOR_TIME="$(printf '\033[38;5;240m')"           # Dark gray
 COLOR_BORDER="$(printf '\033[38;5;%dm' $RANDOM_COLOR_CODE)"
 RESET="$(printf '\033[0m')"
