@@ -10,6 +10,9 @@ rm -rf ~/.tmux.conf
 rm -rf ~/.tmux/plugins/tpm
 git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# Install helper functions for status bar
+cp -f "$(pwd)/../tmux_helpers.sh" "$HOME/.tmux_helpers.sh"
+
 # TMUX configuration
 path=$(pwd)
 ln -s -f "$path/tmux.conf" "$HOME/.tmux.conf"
