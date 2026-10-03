@@ -4,18 +4,20 @@ set -e
 echo "Setting up tmux configurations"
 
 # Remove current tmux configurations
-rm -rf ~/.tmux.conf
+rm -rf $HOME/.tmux.conf
+rm -rf $HOME/.tmux_helpers.sh
 
 # TMUX plugins (https://github.com/tmux-plugins)
-rm -rf ~/.tmux/plugins/tpm
-git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+rm -rf $HOME/.tmux/plugins/tpm
+git clone -q https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
-# Install helper functions for status bar
-cp -f "$(pwd)/tmux_helpers.sh" "$HOME/.tmux_helpers.sh"
 
 # TMUX configuration
 path=$(pwd)
 ln -s -f "$path/tmux.conf" "$HOME/.tmux.conf"
+
+# Install helper functions for status bar
+ln -s -f "$path/tmux_helpers.sh" "$HOME/.tmux_helpers.sh"
 
 echo ""
 echo "Please activate all tmux-plugins: https://github.com/tmux-plugins"
