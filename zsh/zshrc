@@ -199,9 +199,4 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # Load welcome message
 [ -f ~/.welcome.sh ] && . ~/.welcome.sh
 
-# Added by Antigravity CLI installer
-export PATH="/Users/bo/.local/bin:$PATH"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/bo/.lmstudio/bin"
-# End of LM Studio CLI section
+export PATH="$HOME/.local/bin:$PATH"
