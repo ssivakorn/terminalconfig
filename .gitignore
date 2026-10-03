@@ -3,10 +3,3 @@
 # OS and editor files
 .DS_Store
 *.swp
-
-# Executable scripts (source only)
-*.sh
-*.py
-
-# Ghostty symlink target – not part of the repo source
-ghostty/config
