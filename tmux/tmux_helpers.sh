@@ -73,8 +73,8 @@ _hostname() {
   if [ -n "$ssh_params" ]; then
     local hostname
     hostname=$(ssh -G $ssh_params 2>/dev/null | awk 'NR > 2 { exit } ; /^hostname / { print $2 }')
-    # Fallback for short hostname
-    [ -z "$hostname" ] && hostname=$(echo "$hostname" | awk '{ if ($1~/^[0-9.:]+$/) print $1; else split($1, a, "."); print a[1] }')
+    # Shorten FQDN to short hostname (leave IPs as-is)
+    [ -n "$hostname" ] && hostname=$(echo "$hostname" | awk '{ if ($1~/^[0-9.:]+$/) print $1; else { split($1, a, "."); print a[1] } }')
     echo "$hostname"
     return
   fi
