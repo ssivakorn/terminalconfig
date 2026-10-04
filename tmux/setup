@@ -17,6 +17,7 @@ path=$(pwd)
 ln -s -f "$path/tmux.conf" "$HOME/.tmux.conf"
 
 # Install helper functions for status bar
+chmod +x "$path/tmux_helpers.sh"
 ln -s -f "$path/tmux_helpers.sh" "$HOME/.tmux_helpers.sh"
 
 echo ""
